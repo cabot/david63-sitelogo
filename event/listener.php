@@ -23,14 +23,14 @@ class listener implements EventSubscriberInterface
 	/** @var \phpbb\config\config */
 	protected $config;
 
+	/** @var \phpbb\config\db_text */
+	protected $config_text;
+
 	/** @var \phpbb\template\template */
 	protected $template;
 
 	/** @var \phpbb\user */
 	protected $user;
-
-	/** @var ContainerInterface */
-	protected $container;
 
 	/** @var string phpBB root path */
 	protected $root_path;
@@ -38,20 +38,20 @@ class listener implements EventSubscriberInterface
 	/**
 	* Constructor for listener
 	*
-	* @param \phpbb\config\config		$config		phpBB config
-	* @param \phpbb\template\template	$template	phpBB template
-	* @param \phpbb\user				$user		User object
-	* @param ContainerInterface			$container	Service container interface
+	* @param \phpbb\config\config		$config			phpBB config
+	* @param \phpbb\config\db_text		$config_text	Config text object
+	* @param \phpbb\template\template	$template		phpBB template
+	* @param \phpbb\user				$user			User object
 	* @param string 					$root_path
 	*
 	* @access public
 	*/
-	public function __construct(\phpbb\config\config $config, \phpbb\template\template $template, \phpbb\user $user, $container, $root_path)
+	public function __construct(\phpbb\config\config $config, \phpbb\config\db_text $config_text, \phpbb\template\template $template, \phpbb\user $user,  $root_path)
 	{
 		$this->config		= $config;
+		$this->config_text 	= $config_text;
 		$this->template		= $template;
 		$this->user			= $user;
-		$this->container	= $container;
 		$this->root_path	= $root_path;
 	}
 
@@ -97,7 +97,6 @@ class listener implements EventSubscriberInterface
 
 		if ($this->config['site_logo_use_extended_desc'])
 		{
-			$this->config_text				= $this->container->get('config_text');
 			$extended_site_description_data	= $this->config_text->get_array(array('site_logo_extended_site_description'));
 			$this->config['site_desc']		= $extended_site_description_data['site_logo_extended_site_description'];
 		}

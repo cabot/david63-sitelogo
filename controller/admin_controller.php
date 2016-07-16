@@ -20,6 +20,9 @@ class admin_controller implements admin_interface
 	/** @var \phpbb\config\config */
 	protected $config;
 
+	/** @var \phpbb\config\db_text */
+	protected $config_text;
+
 	/** @var \phpbb\request\request */
 	protected $request;
 
@@ -32,9 +35,6 @@ class admin_controller implements admin_interface
 	/** @var \phpbb\log\log */
 	protected $log;
 
-	/** @var ContainerInterface */
-	protected $container;
-
 	/** @var phpbb\language\language */
 	protected $language;
 
@@ -44,25 +44,25 @@ class admin_controller implements admin_interface
 	/**
 	* Constructor for admin controller
 	*
-	* @param \phpbb\config\config		$config		Config object
-	* @param \phpbb\request\request		$request	Request object
-	* @param \phpbb\template\template	$template	Template object
-	* @param \phpbb\user				$user		User object
-	* @param \phpbb\log\log				$log
-	* @param ContainerInterface			$container	Service container interface
-	* @param phpbb\language\language	$language
+	* @param \phpbb\config\config		$config			Config object
+	* @param \phpbb\config\db_text		$config_text	Config text object
+	* @param \phpbb\request\request		$request		Request object
+	* @param \phpbb\template\template	$template		Template object
+	* @param \phpbb\user				$user			User object
+	* @param \phpbb\log\log				$log			Log object
+	* @param phpbb\language\language	$language		Language object
 	*
 	* @return \david63\sitelogo\controller\admin_controller
 	* @access public
 	*/
-	public function __construct(\phpbb\config\config $config, \phpbb\request\request $request, \phpbb\template\template $template, \phpbb\user $user, \phpbb\log\log $log, ContainerInterface $container, \phpbb\language\language $language)
+	public function __construct(\phpbb\config\config $config, \phpbb\config\db_text $config_text, \phpbb\request\request $request, \phpbb\template\template $template, \phpbb\user $user, \phpbb\log\log $log, \phpbb\language\language $language)
 	{
 		$this->config		= $config;
+		$this->config_text 	= $config_text;
 		$this->request		= $request;
 		$this->template		= $template;
 		$this->user			= $user;
 		$this->log			= $log;
-		$this->container	= $container;
 		$this->language		= $language;
 	}
 
@@ -80,8 +80,6 @@ class admin_controller implements admin_interface
 		// Create a form key for preventing CSRF attacks
 		$form_key			= 'sitelogo';
 		add_form_key($form_key);
-
-		$this->config_text = $this->container->get('config_text');
 
 		// Is the form being submitted
 		if ($this->request->is_set_post('submit'))
@@ -158,9 +156,9 @@ class admin_controller implements admin_interface
 	{
 		$this->config->set('site_logo_banner_height', $this->request->variable('site_logo_banner_height', ''));
 		$this->config->set('site_logo_banner_radius', $this->request->variable('site_logo_banner_radius', ''));
-		$this->config->set('site_logo_banner_url', $this->request->variable('site_logo_banner_url', ''));
+		$this->config->set('site_logo_banner_url', $this->request->variable('site_logo_banner_url', '', true));
 		$this->config->set('site_logo_height', $this->request->variable('site_logo_height', ''));
-		$this->config->set('site_logo_image', $this->request->variable('site_logo_image', ''));
+		$this->config->set('site_logo_image', $this->request->variable('site_logo_image', '', true));
 		$this->config->set('site_logo_left', $this->request->variable('site_logo_left', 0));
 		$this->config->set('site_logo_move_search', $this->request->variable('site_logo_move_search', ''));
 		$this->config->set('site_logo_override_colour', $this->request->variable('site_logo_override_colour', '000000'));
@@ -176,6 +174,6 @@ class admin_controller implements admin_interface
 		$this->config->set('site_name_supress', $this->request->variable('site_name_supress', 0));
 		$this->config->set('site_search_remove', $this->request->variable('site_search_remove', 0));
 
-		$this->config_text->set_array(array('site_logo_extended_site_description' => ($this->request->variable('site_logo_extended_site_description', ''))));
+		$this->config_text->set_array(array('site_logo_extended_site_description' => ($this->request->variable('site_logo_extended_site_description', '', true))));
 	}
 }
