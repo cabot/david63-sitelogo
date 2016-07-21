@@ -95,4 +95,6 @@ $lang = array_merge($lang, array(
 	'USE_EXTENED_SITE_DESC_EXPLAIN'		=> 'Replace the standard site description with the extended site description.',
 	'USE_OVERRIDE_COLOUR'				=> 'Override default colour',
 	'USE_OVERRIDE_COLOUR_EXPLAIN'		=> 'Allow the override colour to be used for the Site Name and Site Description.',
+
+	'VERSION'							=> 'Version',
 ));

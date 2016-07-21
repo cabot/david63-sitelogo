@@ -5,13 +5,10 @@
 <p>{{ lang('SITE_LOGO_EXPLAIN') }}</p>
 
 <form id="sitelogo" method="post" action="{U_ACTION}">
-
+	<span class="version_name">{{ lang('VERSION') }}{{ lang('COLON') }}</span><span class="version">{SITE_LOGO_VERSION}</span>
+	
 	<fieldset>
 		<legend>{{ lang('SITE_LOGO_OPTIONS') }}</legend>
-
-		<dl>
-			<dt><label for="version">{{ lang('VERSION') }}{{ lang('COLON') }}</label><span class="version">{SITE_LOGO_VERSION}</span></dt>
-		</dl>
 
 		<dl>
 			<dt><label for="site_logo_image">{{ lang('SITE_LOGO_IMAGE') }}{{ lang('COLON') }}</label><br /><span>{{ lang('SITE_LOGO_IMAGE_EXPLAIN') }}</span></dt>
