@@ -13,7 +13,11 @@ namespace david63\sitelogo\event;
 * @ignore
 */
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
-use david63\sitelogo\ext;
+use \phpbb\config\config;
+use \phpbb\config\db_text;
+use \phpbb\template\template;
+use \phpbb\user;
+use \david63\sitelogo\ext;
 
 /**
 * Event listener
@@ -46,7 +50,7 @@ class listener implements EventSubscriberInterface
 	*
 	* @access public
 	*/
-	public function __construct(\phpbb\config\config $config, \phpbb\config\db_text $config_text, \phpbb\template\template $template, \phpbb\user $user,  $root_path)
+	public function __construct(config $config, db_text $config_text, template $template, user $user,  $root_path)
 	{
 		$this->config		= $config;
 		$this->config_text 	= $config_text;
@@ -78,7 +82,7 @@ class listener implements EventSubscriberInterface
 	*/
 	public function site_logo_header($event)
 	{
-		$site_logo_img		= ($this->config['site_logo_remove']) ? '' : $this->user->img('site_logo');
+		$site_logo_img		= $this->user->img('site_logo');
 		$logo_corners 		= '0px 0px 0px 0px';
 		$site_logo_img_new	= '';
 
@@ -87,7 +91,7 @@ class listener implements EventSubscriberInterface
 		{
 			$logo_path			= (strpos(strtolower($this->config['site_logo_image']), 'http') !== false) ? $this->config['site_logo_image'] : append_sid($this->root_path . $this->config['site_logo_image'], false, false);
 
-			$logo_corners 		= ($this->config['site_logo_left']) ? $this->config['site_logo_pixels'] . 'px 0px 0px ' . $this->config['site_logo_pixels'] . 'px' : $logo_corners;
+			$logo_corners 	= ($this->config['site_logo_left']) ? $this->config['site_logo_pixels'] . 'px 0px 0px ' . $this->config['site_logo_pixels'] . 'px' : $logo_corners;
  			$logo_corners 		= ($this->config['site_logo_right']) ? '0px ' . $this->config['site_logo_pixels'] . 'px ' . $this->config['site_logo_pixels'] . 'px 0px' : $logo_corners;
 			$logo_corners 		= ($this->config['site_logo_left'] && $this->config['site_logo_right']) ? $this->config['site_logo_pixels'] . 'px ' . $this->config['site_logo_pixels'] . 'px ' . $this->config['site_logo_pixels'] . 'px ' . $this->config['site_logo_pixels'] . 'px' : $logo_corners;
 
@@ -117,6 +121,7 @@ class listener implements EventSubscriberInterface
 			'SITE_LOGO_DESCRITION'	=> $this->config['site_desc'],
 			'SITE_LOGO_IMG'			=> $site_logo_img,
 			'SITE_LOGO_IMG_NEW'		=> $site_logo_img_new,
+			'SITE_LOGO_REMOVE'		=> $this->config['site_logo_remove'],
 			'SITE_LOGO_RIGHT'		=> ($this->config['site_logo_position'] == ext::LOGO_POSITION_RIGHT) ? true : false,
 			'SITE_LOGO_SITENAME'	=> $this->config['sitename'],
 			'SITE_NAME_BELOW'		=> $this->config['site_logo_site_name_below'],

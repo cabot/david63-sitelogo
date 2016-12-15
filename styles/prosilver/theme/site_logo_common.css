@@ -14,11 +14,10 @@
 }
 
 .sl-headerbar {
-	margin-bottom: 4px;
+	margin: 0 auto;
 	padding: 5px;
 	border-radius: 7px;
 	position: relative;
-	margin: 0 auto;
 	display: block;
 	max-width: 100%;
 }

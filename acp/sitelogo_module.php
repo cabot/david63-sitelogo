@@ -15,10 +15,10 @@ class sitelogo_module
 
 	function main($id, $mode)
 	{
-		global $phpbb_container, $user;
+		global $phpbb_container;
 
 		$this->tpl_name		= 'sitelogo_manage';
-		$this->page_title	= $user->lang('SITE_LOGO');
+		$this->page_title	= $phpbb_container->get('language')->lang('SITE_LOGO');
 
 		// Get an instance of the admin controller
 		$admin_controller = $phpbb_container->get('david63.sitelogo.admin.controller');

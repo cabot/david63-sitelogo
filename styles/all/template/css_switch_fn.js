@@ -1,4 +1,6 @@
 ;(function($, document) {
+	'use strict';
+
 	$(document).ready(function () {
 		var headBgColour	= '';
 		var h1Colour		= '';
@@ -17,6 +19,11 @@
 		$('.sl-headerbar').css('background-image', bgImage);
 
 		$('a .site_logo').css({'background-image': siteLogo, 'background-repeat': 'no-repeat', 'background-position': '0% 0%', 'background-size': '100%', 'height': logoHeight, 'width': logoWidth, '-webkit-border-radius': logoCorners, '-moz-border-radius': logoCorners, 'border-radius': logoCorners});
+
+		// Remove site logo
+		if (siteLogoRemove == true) {
+			$('span').removeClass('site_logo');
+		}
 
 		// Remove the site name and description
 		if (siteNameSupress == true) {

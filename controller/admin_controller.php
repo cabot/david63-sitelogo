@@ -10,7 +10,14 @@
 namespace david63\sitelogo\controller;
 
 use Symfony\Component\DependencyInjection\ContainerInterface;
-use david63\sitelogo\ext;
+use \phpbb\config\config;
+use \phpbb\config\db_text;
+use \phpbb\request\request;
+use \phpbb\template\template;
+use \phpbb\user;
+use \phpbb\log\log;
+use \phpbb\language\language;
+use \david63\sitelogo\ext;
 
 /**
 * Admin controller
@@ -50,12 +57,12 @@ class admin_controller implements admin_interface
 	* @param \phpbb\template\template	$template		Template object
 	* @param \phpbb\user				$user			User object
 	* @param \phpbb\log\log				$log			Log object
-	* @param phpbb\language\language	$language		Language object
+	* @param \phpbb\language\language	$language		Language object
 	*
 	* @return \david63\sitelogo\controller\admin_controller
 	* @access public
 	*/
-	public function __construct(\phpbb\config\config $config, \phpbb\config\db_text $config_text, \phpbb\request\request $request, \phpbb\template\template $template, \phpbb\user $user, \phpbb\log\log $log, \phpbb\language\language $language)
+	public function __construct(config $config, db_text $config_text, request $request, template $template, user $user, log $log, language $language)
 	{
 		$this->config		= $config;
 		$this->config_text 	= $config_text;
@@ -142,6 +149,7 @@ class admin_controller implements admin_interface
 			'SITE_SEARCH_REMOVE'		=> isset($this->config['site_search_remove']) ? $this->config['site_search_remove'] : '',
 			'USE_BANNER'				=> isset($this->config['site_logo_use_banner']) ? $this->config['site_logo_use_banner'] : '',
 			'USE_OVERRIDE_COLOUR'		=> isset($this->config['site_logo_use_override_colour']) ? $this->config['site_logo_use_override_colour'] : '',
+
 			'U_ACTION'					=> $this->u_action,
 		));
 	}

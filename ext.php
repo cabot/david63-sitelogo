@@ -9,7 +9,9 @@
 
 namespace david63\sitelogo;
 
-class ext extends \phpbb\extension\base
+use \phpbb\extension\base;
+
+class ext extends base
 {
 	const SITE_LOGO_VERSION	= '2.1.0';
 
