@@ -27,8 +27,9 @@
 
 		// Remove the site name and description
 		if (siteNameSupress == true) {
-			$('#site-description h1').css('display', 'none');
-			$('#site-description p').css('display', 'none');
+			$('h1').removeClass('site-description');
+			$('p').removeClass('site-description');
+
     	}
 
 		// Place the site logo (and text) in the centre

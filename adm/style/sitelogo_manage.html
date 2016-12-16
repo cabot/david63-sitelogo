@@ -3,25 +3,25 @@
 <h1>{{ lang('SITE_LOGO') }}</h1>
 <p>{{ lang('SITE_LOGO_EXPLAIN') }}</p>
 
-<img style="float: {S_CONTENT_FLOW_END};" src="https://img.shields.io/badge/{{ lang('VERSION') }}-{SITE_LOGO_VERSION}-orange.svg?style=plastic" /><br />
+<img style="float: {{ S_CONTENT_FLOW_END }};" src="https://img.shields.io/badge/{{ lang('VERSION') }}-{{ SITE_LOGO_VERSION }}-orange.svg?style=plastic" /><br />
 
-<form id="sitelogo" method="post" action="{U_ACTION}">
+<form id="sitelogo" method="post" action="{{ U_ACTION }}">
 	<fieldset>
 		<legend>{{ lang('SITE_LOGO_OPTIONS') }}</legend>
 
 		<dl>
 			<dt><label for="site_logo_image">{{ lang('SITE_LOGO_IMAGE') }}{{ lang('COLON') }}</label><br /><span>{{ lang('SITE_LOGO_IMAGE_EXPLAIN') }}</span></dt>
-			<dd><input name="site_logo_image" type="text" id="site_logo_image" value="{SITE_LOGO_IMAGE}" size="40" maxlength="255" validate="string" /></dd>
+			<dd><input name="site_logo_image" type="text" id="site_logo_image" value="{{ SITE_LOGO_IMAGE }}" size="40" maxlength="255" validate="string" /></dd>
 		</dl>
 
 		<dl>
 			<dt><label for="site_logo_width">{{ lang('SITE_LOGO_WIDTH') }}{{ lang('COLON') }}</label><br /><span>{{ lang('SITE_LOGO_WIDTH_EXPLAIN') }}</span></dt>
-			<dd><input name="site_logo_width" type="text" id="site_logo_width" value="{SITE_LOGO_WIDTH}" size="4" maxlength="4" validate="string" /> {{ lang('PIXELS') }}</dd>
+			<dd><input name="site_logo_width" type="text" id="site_logo_width" value="{{ SITE_LOGO_WIDTH }}" size="4" maxlength="4" validate="string" /> {{ lang('PIXELS') }}</dd>
 		</dl>
 
 		<dl>
 			<dt><label for="site_logo_height">{{ lang('SITE_LOGO_HEIGHT') }}{{ lang('COLON') }}</label><br /><span>{{ lang('SITE_LOGO_HEIGHT_EXPLAIN') }}</span></dt>
-			<dd><input name="site_logo_height" type="text" id="site_logo_height" value="{SITE_LOGO_HEIGHT}" size="4" maxlength="4" validate="string" /> {{ lang('PIXELS') }}</dd>
+			<dd><input name="site_logo_height" type="text" id="site_logo_height" value="{{ SITE_LOGO_HEIGHT }}" size="4" maxlength="4" validate="string" /> {{ lang('PIXELS') }}</dd>
 		</dl>
 
 		<dl>
@@ -30,18 +30,18 @@
 
 		<dl>
 			<dt><label for="site_logo_pixels">{{ lang('SITE_LOGO_PIXELS') }}{{ lang('COLON') }}</label><br /><span>{{ lang('SITE_LOGO_PIXELS_EXPLAIN') }}</span></dt>
-			<dd><input name="site_logo_pixels" type="number" id="site_logo_pixels" value="{SITE_LOGO_PIXELS}" min="0" max="99" /> {{ lang('PIXELS') }}</dd>
+			<dd><input name="site_logo_pixels" type="number" id="site_logo_pixels" value="{{ SITE_LOGO_PIXELS }}" min="0" max="99" /> {{ lang('PIXELS') }}</dd>
 		</dl>
 
 		<dl>
 			<dt><label for="site_logo_left">{{ lang('SITE_LOGO_LEFT') }}{{ lang('COLON') }}</label><br /><span>{{ lang('SITE_LOGO_LEFT_EXPLAIN') }}</span></dt>
-			<dd><label><input type="radio" class="radio" name="site_logo_left" value="1" id="site_logo_left"{% if SITE_LOGO_LEFT %} checked="checked"{% endif %} /> {{ lang('YES') }}</label>
+			<dd><label><input type="radio" class="radio" name="site_logo_left" value="1" id="site_logo_left" {% if SITE_LOGO_LEFT %} checked="checked" {% endif %} /> {{ lang('YES') }}</label>
 				<label><input type="radio" class="radio" name="site_logo_left" value="0" {% if not SITE_LOGO_LEFT %} checked="checked"{% endif %} /> {{ lang('NO') }}</label></dd>
 		</dl>
 
 		<dl>
 			<dt><label for="site_logo_right">{{ lang('SITE_LOGO_RIGHT') }}{{ lang('COLON') }}</label><br /><span>{{ lang('SITE_LOGO_RIGHT_EXPLAIN') }}</span></dt>
-			<dd><label><input type="radio" class="radio" name="site_logo_right" value="1" id="site_logo_right"{% if SITE_LOGO_RIGHT %} checked="checked"{% endif %} /> {{ lang('YES') }}</label>
+			<dd><label><input type="radio" class="radio" name="site_logo_right" value="1" id="site_logo_right" {% if SITE_LOGO_RIGHT %} checked="checked" {% endif %} /> {{ lang('YES') }}</label>
 				<label><input type="radio" class="radio" name="site_logo_right" value="0" {% if not SITE_LOGO_RIGHT %} checked="checked"{% endif %} /> {{ lang('NO') }}</label></dd>
 		</dl>
 
@@ -49,14 +49,14 @@
 			<dt><label for="site_logo_position">{{ lang('SITE_LOGO_POSITION') }}{{ lang('COLON') }}</label></dt>
 			<dd>
 				{% for pos in positions %}
-					<label><input type="radio" class="radio" id="site_logo_position" name="site_logo_position" value="{pos.VALUE}"{% if pos.S_CHECKED %} checked="checked"{% endif %} /> {pos.LABEL}</label>
+					<label><input type="radio" class="radio" id="site_logo_position" name="site_logo_position" value="{{ pos.VALUE }}" {% if pos.S_CHECKED %} checked="checked"{% endif %} /> {{ pos.LABEL }}</label>
 				{% endfor %}
 			</dd>
 		</dl>
 
 		<dl>
 			<dt><label for="site_logo_remove">{{ lang('SITE_LOGO_REMOVE') }}{{ lang('COLON') }}</label><br /><span>{{ lang('SITE_LOGO_REMOVE_EXPLAIN') }}</span></dt>
-			<dd><label><input type="radio" class="radio" name="site_logo_remove" value="1" id="site_logo_remove"{% if SITE_LOGO_REMOVE %} checked="checked"{% endif %}/> {{ lang('YES') }}</label>
+			<dd><label><input type="radio" class="radio" name="site_logo_remove" value="1" id="site_logo_remove" {% if SITE_LOGO_REMOVE %} checked="checked"{% endif %}/> {{ lang('YES') }}</label>
 				<label><input type="radio" class="radio" name="site_logo_remove" value="0" {% if not SITE_LOGO_REMOVE %} checked="checked"{% endif %} /> {{ lang('NO') }}</label></dd>
 		</dl>
 	</fieldset>
@@ -66,13 +66,13 @@
 
 		<dl>
 			<dt><label for="site_logo_move_search">{{ lang('SITE_SEARCH_IN_NAVBAR') }}{{ lang('COLON') }}</label><br /><span>{{ lang('SITE_SEARCH_IN_NAVBAR_EXPLAIN') }}</span></dt>
-			<dd><label><input type="radio" class="radio" name="site_logo_move_search" value="1" id="site_logo_move_search"{% if SEARCH_TO_NAVBAR %} checked="checked"{% endif %}/> {{ lang('YES') }}</label>
+			<dd><label><input type="radio" class="radio" name="site_logo_move_search" value="1" id="site_logo_move_search" {% if SEARCH_TO_NAVBAR %} checked="checked"{% endif %}/> {{ lang('YES') }}</label>
 				<label><input type="radio" class="radio" name="site_logo_move_search" value="0" {% if not SEARCH_TO_NAVBAR %} checked="checked"{% endif %} /> {{ lang('NO') }}</label></dd>
 		</dl>
 
 		<dl>
 			<dt><label for="site_search_remove">{{ lang('SITE_SEARCH_REMOVE') }}{{ lang('COLON') }}</label><br /><span>{{ lang('SITE_SEARCH_REMOVE_EXPLAIN') }}</span></dt>
-			<dd><label><input type="radio" class="radio" name="site_search_remove" value="1" id="site_search_remove"{% if SITE_SEARCH_REMOVE %} checked="checked"{% endif %}/> {{ lang('YES') }}</label>
+			<dd><label><input type="radio" class="radio" name="site_search_remove" value="1" id="site_search_remove" {% if SITE_SEARCH_REMOVE %} checked="checked"{% endif %}/> {{ lang('YES') }}</label>
 				<label><input type="radio" class="radio" name="site_search_remove" value="0" {% if not SITE_SEARCH_REMOVE %} checked="checked"{% endif %} /> {{ lang('NO') }}</label></dd>
 		</dl>
 	</fieldset>
@@ -82,23 +82,23 @@
 
 		<dl>
 			<dt><label for="site_logo_use_banner">{{ lang('USE_BANNER') }}{{ lang('COLON') }}</label><br /><span>{{ lang('USE_BANNER_EXPLAIN') }}</span></dt>
-			<dd><label><input type="radio" class="radio" name="site_logo_use_banner" value="1" id="site_logo_use_banner"{% if USE_BANNER %} checked="checked"{% endif %}/> {{ lang('YES') }}</label>
+			<dd><label><input type="radio" class="radio" name="site_logo_use_banner" value="1" id="site_logo_use_banner" {% if USE_BANNER %} checked="checked"{% endif %}/> {{ lang('YES') }}</label>
 				<label><input type="radio" class="radio" name="site_logo_use_banner" value="0" {% if not USE_BANNER %} checked="checked"{% endif %} /> {{ lang('NO') }}</label></dd>
 		</dl>
 
 		<dl>
 			<dt><label for="site_logo_banner_url">{{ lang('SITE_LOGO_BANNER_IMAGE') }}{{ lang('COLON') }}</label><br /><span>{{ lang('SITE_LOGO_BANNER_IMAGE_EXPLAIN') }}</span></dt>
-			<dd><input name="site_logo_banner_url" type="text" id="site_logo_banner_url" value="{BANNER_URL}" size="40" maxlength="255" validate="string" /></dd>
+			<dd><input name="site_logo_banner_url" type="text" id="site_logo_banner_url" value="{{ BANNER_URL }}" size="40" maxlength="255" validate="string" /></dd>
 		</dl>
 
 		<dl>
 			<dt><label for="site_logo_banner_height">{{ lang('BANNER_HEIGHT') }}{{ lang('COLON') }}</label></dt>
-			<dd><input name="site_logo_banner_height" type="text" id="site_logo_banner_height" value="{BANNER_HEIGHT}" size="4" maxlength="4" validate="string" /> {{ lang('PIXELS') }}</dd>
+			<dd><input name="site_logo_banner_height" type="text" id="site_logo_banner_height" value="{{ BANNER_HEIGHT }}" size="4" maxlength="4" validate="string" /> {{ lang('PIXELS') }}</dd>
 		</dl>
 
 		<dl>
 			<dt><label for="site_logo_banner_radius">{{ lang('BANNER_RADIUS') }}{{ lang('COLON') }}</label><br /><span>{{ lang('BANNER_RADIUS_EXPLAIN') }}</span></dt>
-			<dd><input name="site_logo_banner_radius" type="number" id="site_logo_banner_radius" value="{BANNER_RADIUS}" min="0" max="99" /> {{ lang('PIXELS') }}</dd>
+			<dd><input name="site_logo_banner_radius" type="number" id="site_logo_banner_radius" value="{{ BANNER_RADIUS }}" min="0" max="99" /> {{ lang('PIXELS') }}</dd>
 		</dl>
 	</fieldset>
 
@@ -107,24 +107,24 @@
 
 		<dl>
 			<dt><label for="site_logo_site_name_below">{{ lang('SITE_NAME_BELOW') }}{{ lang('COLON') }}</label><br /><span>{{ lang('SITE_NAME_BELOW_EXPLAIN') }}</span></dt>
-			<dd><label><input type="radio" class="radio" name="site_logo_site_name_below" value="1" id="site_logo_site_name_below"{% if SITE_NAME_BELOW %} checked="checked"{% endif %}/> {{ lang('YES') }}</label>
+			<dd><label><input type="radio" class="radio" name="site_logo_site_name_below" value="1" id="site_logo_site_name_below" {% if SITE_NAME_BELOW %} checked="checked"{% endif %}/> {{ lang('YES') }}</label>
 				<label><input type="radio" class="radio" name="site_logo_site_name_below" value="0" {% if not SITE_NAME_BELOW %} checked="checked"{% endif %} /> {{ lang('NO') }}</label></dd>
 		</dl>
 
 		<dl>
 			<dt><label for="site_logo_use_override_colour">{{ lang('USE_OVERRIDE_COLOUR') }}{{ lang('COLON') }}</label><br /><span>{{ lang('USE_OVERRIDE_COLOUR_EXPLAIN') }}</span></dt>
-			<dd><label><input type="radio" class="radio" name="site_logo_use_override_colour" value="1" id="site_logo_use_override_colour"{% if USE_OVERRIDE_COLOUR %} checked="checked"{% endif %}/> {{ lang('YES') }}</label>
+			<dd><label><input type="radio" class="radio" name="site_logo_use_override_colour" value="1" id="site_logo_use_override_colour" {% if USE_OVERRIDE_COLOUR %} checked="checked"{% endif %}/> {{ lang('YES') }}</label>
 				<label><input type="radio" class="radio" name="site_logo_use_override_colour" value="0" {% if not USE_OVERRIDE_COLOUR %} checked="checked"{% endif %} /> {{ lang('NO') }}</label></dd>
 		</dl>
 
 		<dl>
 			<dt><label for="site_logo_override_colour">{{ lang('OVERRIDE_COLOUR') }}{{ lang('COLON') }}</label><br /><span>{{ lang('OVERRIDE_COLOUR_EXPLAIN') }}</span></dt>
-			<dd><input name="site_logo_override_colour" type="text" id="site_logo_override_colour" value="{OVERRIDE_COLOUR}" size="6" maxlength="6" />&nbsp;<span style="background-color: #{OVERRIDE_COLOUR}">&nbsp; &nbsp;</span>&nbsp;&nbsp;<span>[ <a href="#" id="color_palette_toggle">{{ lang('COLOUR_SWATCH') }}</a> ]</span><div id="color_palette_placeholder" style="display: none;" data-orientation="h" data-height="12" data-width="15" data-target="#site_logo_override_colour"></div></dd>
+			<dd><input name="site_logo_override_colour" type="text" id="site_logo_override_colour" value="{{ OVERRIDE_COLOUR }}" size="6" maxlength="6" />&nbsp;<span style="background-color: #{{ OVERRIDE_COLOUR }}">&nbsp; &nbsp;</span>&nbsp;&nbsp;<span>[ <a href="#" id="color_palette_toggle">{{ lang('COLOUR_SWATCH') }}</a> ]</span><div id="color_palette_placeholder" style="display: none;" data-orientation="h" data-height="12" data-width="15" data-target="#site_logo_override_colour"></div></dd>
 		</dl>
 
 		<dl>
 			<dt><label for="site_name_supress">{{ lang('SITE_NAME_SUPRESS') }}{{ lang('COLON') }}</label><br /><span>{{ lang('SITE_NAME_SUPRESS_EXPLAIN') }}</span></dt>
-			<dd><label><input type="radio" class="radio" name="site_name_supress" value="1" id="site_name_supress"{% if SITE_NAME_SUPRESS %} checked="checked"{% endif %}/> {{ lang('YES') }}</label>
+			<dd><label><input type="radio" class="radio" name="site_name_supress" value="1" id="site_name_supress" {% if SITE_NAME_SUPRESS %} checked="checked"{% endif %}/> {{ lang('YES') }}</label>
 				<label><input type="radio" class="radio" name="site_name_supress" value="0" {% if not SITE_NAME_SUPRESS %} checked="checked"{% endif %} /> {{ lang('NO') }}</label></dd>
 		</dl>
 	</fieldset>
@@ -134,13 +134,13 @@
 
 		<dl>
 			<dt><label for="site_logo_use_extended_desc">{{ lang('USE_EXTENED_SITE_DESC') }}{{ lang('COLON') }}</label><br /><span>{{ lang('USE_EXTENED_SITE_DESC_EXPLAIN') }}</span></dt>
-			<dd><label><input type="radio" class="radio" name="site_logo_use_extended_desc" value="1" id="site_logo_use_extended_desc"{% if EXTENED_SITE_DESC %} checked="checked"{% endif %}/> {{ lang('YES') }}</label>
+			<dd><label><input type="radio" class="radio" name="site_logo_use_extended_desc" value="1" id="site_logo_use_extended_desc" {% if EXTENED_SITE_DESC %} checked="checked"{% endif %}/> {{ lang('YES') }}</label>
 				<label><input type="radio" class="radio" name="site_logo_use_extended_desc" value="0" {% if not EXTENED_SITE_DESC %} checked="checked"{% endif %} /> {{ lang('NO') }}</label></dd>
 		</dl>
 
 		<dl>
 			<dt><label for="extended_site_description">{{ lang('EXTENDED_SITE_DESCRIPTION') }}{{ lang('COLON') }}</label><br /><span>{{ lang('EXTENDED_SITE_DESCRIPTION_EXPLAIN') }}</span></dt>
-			<dd><textarea name="site_logo_extended_site_description" id="site_logo_extended_site_description" rows="3" cols="50">{EXTENED_SITE_DESCRIPTION}</textarea></dd>
+			<dd><textarea name="site_logo_extended_site_description" id="site_logo_extended_site_description" rows="3" cols="50">{{ EXTENED_SITE_DESCRIPTION }}</textarea></dd>
 		</dl>
 	</fieldset>
 
@@ -150,7 +150,7 @@
 			<input class="button1" type="submit" id="submit" name="submit" value="{{ lang('SUBMIT') }}" />&nbsp;
 			<input class="button2" type="reset" id="reset" name="reset" value="{{ lang('RESET') }}" />
 		</p>
-		{S_FORM_TOKEN}
+		{{ S_FORM_TOKEN }}
 	</fieldset>
 </form>
 
