@@ -38,6 +38,7 @@ if (empty($lang) || !is_array($lang))
 
 $lang = array_merge($lang, array(
 	'BANNER_HEIGHT'						=> 'Banner height',
+	'BANNER_HEIGHT_EXPLAIN'				=> 'This setting will set the size of the area for the site banner image. The actual image may need to be resized in order to fit this space, otherwise it may not display correctly.',
 	'BANNER_OPTIONS'					=> 'Banner options',
 	'BANNER_RADIUS'						=> 'Banner radius',
 	'BANNER_RADIUS_EXPLAIN'				=> 'Sets the number of pixels for rounding the banner corners. Setting this to 0 means that the banner will have square corners.',
@@ -67,7 +68,7 @@ $lang = array_merge($lang, array(
 	'SITE_LOGO_LEFT_EXPLAIN'			=> 'Round the left side corners to match the banner.',
 	'SITE_LOGO_OPTIONS'					=> 'Logo options',
 	'SITE_LOGO_PIXELS'					=> 'Logo radius',
-	'SITE_LOGO_PIXELS_EXPLAIN'			=> 'Sets the number of pixels for rounding the logo corners.',
+	'SITE_LOGO_PIXELS_EXPLAIN'			=> 'Sets the number of pixels for rounding the logo corners.<br /><em>The default for prosilver is 7px.</em>',
 	'SITE_LOGO_POSITION'				=> 'Site logo position',
 	'SITE_LOGO_REMOVE'					=> 'Remove site logo',
 	'SITE_LOGO_REMOVE_EXPLAIN'			=> 'Setting this option will prevent the display the site logo.',
@@ -95,6 +96,4 @@ $lang = array_merge($lang, array(
 	'USE_EXTENED_SITE_DESC_EXPLAIN'		=> 'Replace the standard site description with the extended site description.',
 	'USE_OVERRIDE_COLOUR'				=> 'Override default colour',
 	'USE_OVERRIDE_COLOUR_EXPLAIN'		=> 'Allow the override colour to be used for the Site Name and Site Description.',
-
-	'VERSION'							=> 'Version',
 ));

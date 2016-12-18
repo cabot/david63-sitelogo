@@ -13,6 +13,12 @@
     box-sizing: border-box;
 }
 
+.headerbar{
+	width: auto;
+	background-size: contain;
+	background-color: transparent;
+}
+
 .sl-headerbar {
 	margin: 0 auto;
 	padding: 5px;
