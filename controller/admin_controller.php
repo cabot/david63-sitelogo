@@ -113,9 +113,9 @@ class admin_controller implements admin_interface
 		// Positions
 		$positions = array();
 
-		$positions[ext::LOGO_POSITION_LEFT] = $this->language->lang('LOGO_LEFT');
-		$positions[ext::LOGO_POSITION_CENTER] = $this->language->lang('LOGO_CENTRE');
-		$positions[ext::LOGO_POSITION_RIGHT] = $this->language->lang('LOGO_RIGHT');
+		$positions[ext::LOGO_POSITION_LEFT] 	= $this->language->lang('LOGO_LEFT');
+		$positions[ext::LOGO_POSITION_CENTER]	= $this->language->lang('LOGO_CENTRE');
+		$positions[ext::LOGO_POSITION_RIGHT] 	= $this->language->lang('LOGO_RIGHT');
 
 		foreach ($positions as $value => $label)
 		{
@@ -132,9 +132,12 @@ class admin_controller implements admin_interface
 			'BANNER_HEIGHT'				=> isset($this->config['site_logo_banner_height']) ? $this->config['site_logo_banner_height'] : '',
 			'BANNER_RADIUS'				=> isset($this->config['site_logo_banner_radius']) ? $this->config['site_logo_banner_radius'] : '',
 			'BANNER_URL'				=> isset($this->config['site_logo_banner_url']) ? $this->config['site_logo_banner_url'] : '',
+
 			'EXTENED_SITE_DESC'			=> isset($this->config['site_logo_use_extended_desc']) ? $this->config['site_logo_use_extended_desc'] : '',
 			'EXTENED_SITE_DESCRIPTION'	=> $extended_site_description_data['site_logo_extended_site_description'],
+
 			'OVERRIDE_COLOUR'			=> isset($this->config['site_logo_override_colour']) ? $this->config['site_logo_override_colour'] : '',
+
 			'SEARCH_TO_NAVBAR'			=> isset($this->config['site_logo_move_search']) ? $this->config['site_logo_move_search'] : '',
 			'SITE_LOGO_HEIGHT'			=> isset($this->config['site_logo_height']) ? $this->config['site_logo_height'] : '',
 			'SITE_LOGO_IMAGE'			=> isset($this->config['site_logo_image']) ? $this->config['site_logo_image'] : '',
@@ -147,9 +150,9 @@ class admin_controller implements admin_interface
 			'SITE_NAME_BELOW'			=> isset($this->config['site_logo_site_name_below']) ? $this->config['site_logo_site_name_below'] : '',
 			'SITE_NAME_SUPRESS'			=> isset($this->config['site_name_supress']) ? $this->config['site_name_supress'] : '',
 			'SITE_SEARCH_REMOVE'		=> isset($this->config['site_search_remove']) ? $this->config['site_search_remove'] : '',
+
 			'USE_BANNER'				=> isset($this->config['site_logo_use_banner']) ? $this->config['site_logo_use_banner'] : '',
 			'USE_OVERRIDE_COLOUR'		=> isset($this->config['site_logo_use_override_colour']) ? $this->config['site_logo_use_override_colour'] : '',
-
 			'U_ACTION'					=> $this->u_action,
 		));
 	}

@@ -46,7 +46,7 @@ class listener implements EventSubscriberInterface
 	* @param \phpbb\config\db_text		$config_text	Config text object
 	* @param \phpbb\template\template	$template		phpBB template
 	* @param \phpbb\user				$user			User object
-	* @param string 					$root_path
+	* @param string 					$root_path		phpBB root path
 	*
 	* @access public
 	*/
@@ -110,11 +110,15 @@ class listener implements EventSubscriberInterface
 		$this->template->assign_vars(array(
 			'BANNER_HEIGHT'			=> $this->config['site_logo_banner_height'],
 			'BORDER_RADIUS'			=> $this->config['site_logo_banner_radius'],
+
 			'LOGO_CORNERS'			=> $logo_corners,
 			'LOGO_HEIGHT'			=> $this->config['site_logo_height'],
 			'LOGO_WIDTH'			=> $this->config['site_logo_width'],
+
 			'OVERRIDE_COLOUR'		=> $this->config['site_logo_override_colour'],
+
 			'SEARCH_BELOW'			=> ((!$this->config['site_search_remove'] && $this->config['site_logo_site_name_below']) || $this->config['site_logo_move_search']) ? true : false,
+
 			'SITE_DESCRIPTION'		=> $this->config['site_desc'],
 			'SITE_LOGO_BANNER'		=> $site_logo_banner,
 			'SITE_LOGO_CENTRE'		=> ($this->config['site_logo_position'] == ext::LOGO_POSITION_CENTER) ? true : false,
@@ -127,6 +131,7 @@ class listener implements EventSubscriberInterface
 			'SITE_NAME_BELOW'		=> $this->config['site_logo_site_name_below'],
 			'SITENAME_SUPRESS'		=> ($this->config['site_name_supress'] || $this->config['site_logo_site_name_below']) ? true : false,
 			'S_IN_SEARCH'			=> ($this->config['site_search_remove'] || $this->config['site_logo_site_name_below'] || $this->config['site_logo_move_search']) ? true : false,
+
 			'USE_BANNER'			=> ($this->config['site_logo_use_banner'] && $this->config['site_logo_banner_url']) ? true : false,
 			'USE_OVERRIDE_COLOUR'	=> $this->config['site_logo_use_override_colour'],
 		));
