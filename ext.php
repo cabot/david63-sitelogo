@@ -13,7 +13,7 @@ use \phpbb\extension\base;
 
 class ext extends base
 {
-	const SITE_LOGO_VERSION	= '2.1.0';
+	const SITE_LOGO_VERSION	= '2.1.0-rc1';
 
 	const LOGO_POSITION_LEFT	= 0;
 	const LOGO_POSITION_CENTER	= 1;
@@ -31,7 +31,7 @@ class ext extends base
 	{
 		$config = $this->container->get('config');
 
-		if (!phpbb_version_compare($config['version'], '3.2.0-a1', '>='))
+		if (!phpbb_version_compare($config['version'], '3.2.0', '>='))
 		{
 			$this->container->get('language')->add_lang('ext_sitelogo', 'david63/sitelogo');
 			trigger_error($this->container->get('language')->lang('VERSION_32') . adm_back_link(append_sid('index.' . $this->container->getParameter('core.php_ext'), 'i=acp_extensions&amp;mode=main')), E_USER_WARNING);
