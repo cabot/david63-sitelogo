@@ -2,13 +2,26 @@
 	"name": "david63/sitelogo",
 	"type": "phpbb-extension",
 	"description": "Replace the standard phpBB logo with own custom logo",
-	"version": "2.1.0-rc1",
+	"version": "2.1.0-rc2",
 	"time": "2017-01-05",
 	"license": "GPL-2.0",
-	"authors": [{
+	"authors": [
+		{
 			"name": "David Wood",
 			"role": "Developer"
-		}],
+		},
+		{
+            "name": "Alessandro DI BENEDETTO",
+            "email": "alex@phpbb-store.it",
+            "homepage": "http://phpbb-store.it",
+            "role": "Developer - Background image"
+        },
+		{
+            "name": "Jan Odvarko",
+            "homepage": "http://odvarko.cz",
+            "role": "Creator - jscolor, JavaScript Color Picker"
+        }
+    ],
 	"require": {
         "php": ">=5.4.0",
 		"phpbb/phpbb": ">=3.2.0",

@@ -139,6 +139,7 @@ class admin_controller implements admin_interface
 			'OVERRIDE_COLOUR'			=> isset($this->config['site_logo_override_colour']) ? $this->config['site_logo_override_colour'] : '',
 
 			'SEARCH_TO_NAVBAR'			=> isset($this->config['site_logo_move_search']) ? $this->config['site_logo_move_search'] : '',
+			'SITE_BACKGROUND_IMAGE'		=> isset($this->config['site_logo_background_image']) ? $this->config['site_logo_background_image'] : '',
 			'SITE_LOGO_HEIGHT'			=> isset($this->config['site_logo_height']) ? $this->config['site_logo_height'] : '',
 			'SITE_LOGO_IMAGE'			=> isset($this->config['site_logo_image']) ? $this->config['site_logo_image'] : '',
 			'SITE_LOGO_LEFT'			=> isset($this->config['site_logo_left']) ? $this->config['site_logo_left'] : '',
@@ -153,6 +154,7 @@ class admin_controller implements admin_interface
 
 			'USE_BANNER'				=> isset($this->config['site_logo_use_banner']) ? $this->config['site_logo_use_banner'] : '',
 			'USE_OVERRIDE_COLOUR'		=> isset($this->config['site_logo_use_override_colour']) ? $this->config['site_logo_use_override_colour'] : '',
+			'USE_SITE_BACKGROUND'		=> isset($this->config['site_logo_use_background']) ? $this->config['site_logo_use_background'] : '',
 			'U_ACTION'					=> $this->u_action,
 		));
 	}
@@ -165,6 +167,7 @@ class admin_controller implements admin_interface
 	*/
 	protected function set_options()
 	{
+		$this->config->set('site_logo_background_image', $this->request->variable('site_logo_background_image', ''));
 		$this->config->set('site_logo_banner_height', $this->request->variable('site_logo_banner_height', ''));
 		$this->config->set('site_logo_banner_radius', $this->request->variable('site_logo_banner_radius', ''));
 		$this->config->set('site_logo_banner_url', $this->request->variable('site_logo_banner_url', '', true));
@@ -180,6 +183,7 @@ class admin_controller implements admin_interface
 		$this->config->set('site_logo_site_name_below', $this->request->variable('site_logo_site_name_below', 0));
 		$this->config->set('site_logo_use_extended_desc', $this->request->variable('site_logo_use_extended_desc', 0));
 		$this->config->set('site_logo_width', $this->request->variable('site_logo_width', ''));
+		$this->config->set('site_logo_use_background', $this->request->variable('site_logo_use_background', 0));
 		$this->config->set('site_logo_use_banner', $this->request->variable('site_logo_use_banner', ''));
 		$this->config->set('site_logo_use_override_colour', $this->request->variable('site_logo_use_override_colour', 0));
 		$this->config->set('site_name_supress', $this->request->variable('site_name_supress', 0));

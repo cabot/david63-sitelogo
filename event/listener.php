@@ -107,6 +107,8 @@ class listener implements EventSubscriberInterface
 
 		$site_logo_banner = (strpos(strtolower($this->config['site_logo_banner_url']), 'http') !== false) ? $this->config['site_logo_banner_url'] : append_sid($this->root_path . $this->config['site_logo_banner_url'], false, false);
 
+		$site_logo_background = (strpos(strtolower($this->config['site_logo_background_image']), 'http') !== false) ? $this->config['site_logo_background_image'] : append_sid($this->root_path . $this->config['site_logo_background_image'], false, false);
+
 		$this->template->assign_vars(array(
 			'BANNER_HEIGHT'			=> $this->config['site_logo_banner_height'],
 			'BORDER_RADIUS'			=> $this->config['site_logo_banner_radius'],
@@ -120,6 +122,7 @@ class listener implements EventSubscriberInterface
 			'SEARCH_BELOW'			=> ((!$this->config['site_search_remove'] && $this->config['site_logo_site_name_below']) || $this->config['site_logo_move_search']) ? true : false,
 
 			'SITE_DESCRIPTION'		=> $this->config['site_desc'],
+			'SITE_LOGO_BACKGROUND'	=> $site_logo_background,
 			'SITE_LOGO_BANNER'		=> $site_logo_banner,
 			'SITE_LOGO_CENTRE'		=> ($this->config['site_logo_position'] == ext::LOGO_POSITION_CENTER) ? true : false,
 			'SITE_LOGO_DESCRITION'	=> $this->config['site_desc'],
@@ -132,6 +135,7 @@ class listener implements EventSubscriberInterface
 			'SITENAME_SUPRESS'		=> ($this->config['site_name_supress'] || $this->config['site_logo_site_name_below']) ? true : false,
 			'S_IN_SEARCH'			=> ($this->config['site_search_remove'] || $this->config['site_logo_site_name_below'] || $this->config['site_logo_move_search']) ? true : false,
 
+			'USE_BACKGROUND'		=> ($this->config['site_logo_use_background'] && $this->config['site_logo_use_background']) ? true : false,
 			'USE_BANNER'			=> ($this->config['site_logo_use_banner'] && $this->config['site_logo_banner_url']) ? true : false,
 			'USE_OVERRIDE_COLOUR'	=> $this->config['site_logo_use_override_colour'],
 		));

@@ -20,15 +20,17 @@ class version_2_1_0 extends migration
 	public function update_data()
 	{
 		return array(
-			array('config.add', array('site_logo_banner_height', '100')),
-			array('config.add', array('site_logo_banner_radius', '10')),
+			array('config.add', array('site_logo_use_background', 0)),
+			array('config.add', array('site_logo_background_image', 'styles/prosilver/theme/images/bg_header.gif')),
+			array('config.add', array('site_logo_banner_height', 100)),
+			array('config.add', array('site_logo_banner_radius', 10)),
 			array('config.add', array('site_logo_banner_url', '')),
-			array('config.add', array('site_logo_move_search', '0')),
-			array('config.add', array('site_logo_override_colour', '000000')),
-			array('config.add', array('site_logo_site_name_below', '0')),
-			array('config.add', array('site_logo_use_banner', '0')),
-			array('config.add', array('site_logo_use_extended_desc', '0')),
-			array('config.add', array('site_logo_use_override_colour', '0')),
+			array('config.add', array('site_logo_move_search', 0)),
+			array('config.add', array('site_logo_override_colour', '#000000')),
+			array('config.add', array('site_logo_site_name_below', 0)),
+			array('config.add', array('site_logo_use_banner', 0)),
+			array('config.add', array('site_logo_use_extended_desc', 0)),
+			array('config.add', array('site_logo_use_override_colour', 0)),
 
 			array('config_text.add', array('site_logo_extended_site_description', '')),
 

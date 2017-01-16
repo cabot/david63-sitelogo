@@ -43,6 +43,8 @@ $lang = array_merge($lang, array(
 	'BANNER_RADIUS'						=> 'Banner radius',
 	'BANNER_RADIUS_EXPLAIN'				=> 'Sets the number of pixels for rounding the banner corners. Setting this to 0 means that the banner will have square corners.',
 
+	'CLICK_TO_SELECT'					=> 'Click in the box to select a colour',
+
 	'EXTENDED_SITE_DESCRIPTION'			=> 'Extended site description',
 	'EXTENDED_SITE_DESCRIPTION_EXPLAIN'	=> 'This will allow you to create a site description that is greater than the 255 character limit of the standard site description and will <strong>replace</strong> the standard site description.<br /><strong>Note:</strong> If the data here is overly long there may be some strange “side effects” - most of these can be overcome by adjusting some of the other options.',
 
@@ -57,7 +59,11 @@ $lang = array_merge($lang, array(
 
 	'SEARCH_OPTIONS'					=> 'Search box options',
 
-	'SITE_LOGO_EXPLAIN'					=> 'Here you can set the options for a custom site logo to replace the default logo and/or a custom banner and an extended board description.',
+	'SITE_BACKGROUND'					=> 'Site background',
+	'SITE_BACKGROUND_IMAGE'				=> 'Path to the site background',
+	'SITE_BACKGROUND_IMAGE_EXPLAIN'		=> 'If you want to use a remote image as the background then enter the full url of the image otherwise, just enter the location of the image on the site.<br /><em>e.g. images/my_background.jpg<br />http://a_site.org/new_background.png</em>',
+
+	'SITE_LOGO_EXPLAIN'					=> 'Here you can set the options for a custom site logo to replace the default logo, add a custom banner, use an extended board description or add a background to your board.',
 	'SITE_LOGO_BANNER_IMAGE'			=> 'Path to the custom banner',
 	'SITE_LOGO_BANNER_IMAGE_EXPLAIN'	=> 'If you want to use a remote image as the banner then enter the full url of the image otherwise, just enter the location of the image on the site.<br /><em>e.g. images/my_banner.jpg<br />http://a_site.org/new_banner.png</em>',
 	'SITE_LOGO_HEIGHT'					=> 'Logo height',
@@ -96,4 +102,6 @@ $lang = array_merge($lang, array(
 	'USE_EXTENED_SITE_DESC_EXPLAIN'		=> 'Replace the standard site description with the extended site description.',
 	'USE_OVERRIDE_COLOUR'				=> 'Override default colour',
 	'USE_OVERRIDE_COLOUR_EXPLAIN'		=> 'Allow the override colour to be used for the Site Name and Site Description.',
+	'USE_SITE_BACKGROUND'				=> 'Use a site background',
+	'USE_SITE_BACKGROUND_EXPLAIN'		=> 'Add a picture to become the background of your board.',
 ));

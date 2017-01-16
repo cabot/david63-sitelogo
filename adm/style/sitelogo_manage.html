@@ -119,7 +119,7 @@
 
 		<dl>
 			<dt><label for="site_logo_override_colour">{{ lang('OVERRIDE_COLOUR') }}{{ lang('COLON') }}</label><br /><span>{{ lang('OVERRIDE_COLOUR_EXPLAIN') }}</span></dt>
-			<dd><input name="site_logo_override_colour" type="text" id="site_logo_override_colour" value="{{ OVERRIDE_COLOUR }}" size="6" maxlength="6" />&nbsp;<span style="background-color: #{{ OVERRIDE_COLOUR }}">&nbsp; &nbsp;</span>&nbsp;&nbsp;<span>[ <a href="#" id="color_palette_toggle">{{ lang('COLOUR_SWATCH') }}</a> ]</span><div id="color_palette_placeholder" style="display: none;" data-orientation="h" data-height="12" data-width="15" data-target="#site_logo_override_colour"></div></dd>
+			<dd><input class="jscolor {hash:true, uppercase:false}" name="site_logo_override_colour" type="text" id="site_logo_override_colour" value="{{ OVERRIDE_COLOUR }}" size="6" maxlength="6" />&nbsp;{{ lang('CLICK_TO_SELECT') }}</dd>
 		</dl>
 
 		<dl>
@@ -145,6 +145,21 @@
 	</fieldset>
 
 	<fieldset>
+		<legend>{{ lang('SITE_BACKGROUND') }}</legend>
+
+		<dl>
+			<dt><label for="site_logo_use_background">{{ lang('USE_SITE_BACKGROUND') }}{{ lang('COLON') }}</label><br /><span>{{ lang('USE_SITE_BACKGROUND_EXPLAIN') }}</span></dt>
+			<dd><label><input type="radio" class="radio" name="site_logo_use_background" value="1" id="site_logo_use_background" {% if USE_SITE_BACKGROUND %} checked="checked"{% endif %}/> {{ lang('YES') }}</label>
+				<label><input type="radio" class="radio" name="site_logo_use_background" value="0" {% if not USE_SITE_BACKGROUND %} checked="checked"{% endif %} /> {{ lang('NO') }}</label></dd>
+		</dl>
+
+		<dl>
+			<dt><label for="site_logo_background_image">{{ lang('SITE_BACKGROUND_IMAGE') }}{{ lang('COLON') }}</label><br /><span>{{ lang('SITE_BACKGROUND_IMAGE_EXPLAIN') }}</span></dt>
+			<dd><input name="site_logo_background_image" type="text" id="site_logo_background_image" value="{{ SITE_BACKGROUND_IMAGE }}" size="40" maxlength="255" validate="string" /></dd>
+		</dl>
+	</fieldset>
+
+	<fieldset>
 		<legend>{{ lang('ACP_SUBMIT_CHANGES') }}</legend>
 		<p class="submit-buttons">
 			<input class="button1" type="submit" id="submit" name="submit" value="{{ lang('SUBMIT') }}" />&nbsp;
@@ -154,4 +169,5 @@
 	</fieldset>
 </form>
 
+{% INCLUDEJS '@david63_sitelogo/jscolor.js' %}
 {% include 'overall_footer.html' %}
