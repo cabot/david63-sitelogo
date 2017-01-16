@@ -1,22 +1,22 @@
 <!-- Send the variables for the css files -->
 <script>
-	var backgroundImage		= '{{ SITE_LOGO_BACKGROUND }}';
-	var bannerHeight		= '{{ BANNER_HEIGHT }}';
-	var borderRadius		= '{{ BORDER_RADIUS }}';
-	var logoCorners 		= '{{ LOGO_CORNERS }}';
-	var logoHeight 			= '{{ LOGO_HEIGHT }}';
-	var logoWidth 			= '{{ LOGO_WIDTH }}';
-	var overrideColour		= '{{ OVERRIDE_COLOUR }}';
-	var searchBelow			= '{{ SEARCH_BELOW }}';
-	var siteLogo 			= '{{ SITE_LOGO_IMG_NEW }}';
-	var siteLogoBanner		= '{{ SITE_LOGO_BANNER }}';
-	var siteLogoCentre		= '{{ SITE_LOGO_CENTRE }}';
-	var siteLogoRemove		= '{{ SITE_LOGO_REMOVE }}';
-	var siteLogoRight		= '{{ SITE_LOGO_RIGHT }}';
-	var siteNameSupress		= '{{ SITENAME_SUPRESS }}';
-	var useBackground		= '{{ USE_BACKGROUND }}';
-	var useBanner			= '{{ USE_BANNER }}';
-	var useOverrideColour	= '{{ USE_OVERRIDE_COLOUR}}';
+	var backgroundImage		= '{{ SITE_LOGO_BACKGROUND | escape('js') }}';
+	var bannerHeight		= '{{ BANNER_HEIGHT | escape('js') }}';
+	var borderRadius		= '{{ BORDER_RADIUS | escape('js') }}';
+	var logoCorners 		= '{{ LOGO_CORNERS | escape('js') }}';
+	var logoHeight 			= '{{ LOGO_HEIGHT | escape('js') }}';
+	var logoWidth 			= '{{ LOGO_WIDTH | escape('js') }}';
+	var overrideColour		= '{{ OVERRIDE_COLOUR | escape('js') }}';
+	var searchBelow			= '{{ SEARCH_BELOW | escape('js') }}';
+	var siteLogo 			= '{{ SITE_LOGO_IMG_NEW | escape('js') }}';
+	var siteLogoBanner		= '{{ SITE_LOGO_BANNER | escape('js') }}';
+	var siteLogoCentre		= '{{ SITE_LOGO_CENTRE | escape('js') }}';
+	var siteLogoRemove		= '{{ SITE_LOGO_REMOVE | escape('js') }}';
+	var siteLogoRight		= '{{ SITE_LOGO_RIGHT | escape('js') }}';
+	var siteNameSupress		= '{{ SITENAME_SUPRESS | escape('js') }}';
+	var useBackground		= '{{ USE_BACKGROUND | escape('js') }}';
+	var useBanner			= '{{ USE_BANNER | escape('js') }}';
+	var useOverrideColour	= '{{ USE_OVERRIDE_COLOUR | escape('js') }}';
 </script>
 
 {% INCLUDEJS '@david63_sitelogo/css_switch_fn.js' %}
