@@ -124,10 +124,10 @@
 		// Use the override text colour to replace the default in the header
 		if (useOverrideColour == true)
 		{
-			$('#site-description h1').css('color', '#' + overrideColour);
-			$('#site-description p').css('color', '#' + overrideColour);
-			$('#sl-new-desc h1').css('color', '#' + overrideColour);
-			$('#sl-new-desc p').css('color', '#' + overrideColour);
+			$('#site-description h1').css('color', overrideColour);
+			$('#site-description p').css('color', overrideColour);
+			$('#sl-new-desc h1').css('color', overrideColour);
+			$('#sl-new-desc p').css('color', overrideColour);
     	}
 
 		// Use the Site Logo banner
