@@ -22,10 +22,7 @@
 		<dl>
 			<dt><label for="site_logo_height">{{ lang('SITE_LOGO_HEIGHT') }}{{ lang('COLON') }}</label><br /><span>{{ lang('SITE_LOGO_HEIGHT_EXPLAIN') }}</span></dt>
 			<dd><input name="site_logo_height" type="text" id="site_logo_height" value="{{ SITE_LOGO_HEIGHT }}" size="4" maxlength="4" validate="string" /> {{ lang('PIXELS') }}</dd>
-		</dl>
-
-		<dl>
-			<dt>{{ lang('SITE_LOGO_SIZE_EXPLAIN') }}</dt>
+			<dd>{{ lang('SITE_LOGO_SIZE_EXPLAIN') }}</dd>
 		</dl>
 
 		<dl>
@@ -58,6 +55,11 @@
 			<dt><label for="site_logo_remove">{{ lang('SITE_LOGO_REMOVE') }}{{ lang('COLON') }}</label><br /><span>{{ lang('SITE_LOGO_REMOVE_EXPLAIN') }}</span></dt>
 			<dd><label><input type="radio" class="radio" name="site_logo_remove" value="1" id="site_logo_remove" {% if SITE_LOGO_REMOVE %} checked="checked"{% endif %}/> {{ lang('YES') }}</label>
 				<label><input type="radio" class="radio" name="site_logo_remove" value="0" {% if not SITE_LOGO_REMOVE %} checked="checked"{% endif %} /> {{ lang('NO') }}</label></dd>
+		</dl>
+
+		<dl>
+			<dt><label for="site_logo_logo_url">{{ lang('SITE_LOGO_URL') }}{{ lang('COLON') }}</label><br /><span>{{ lang('SITE_LOGO_URL_EXPLAIN') }}</span></dt>
+			<dd><input name="site_logo_logo_url" type="text" id="site_logo_logo_url" value="{{ SITE_LOGO_URL }}" size="40" maxlength="255" validate="string" /></dd>
 		</dl>
 	</fieldset>
 

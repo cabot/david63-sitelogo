@@ -1,4 +1,4 @@
-<!-- Send the variables for the css files -->
+<!-- Send the variables to the js file -->
 <script>
 	var backgroundImage		= '{{ SITE_LOGO_BACKGROUND | escape('js') }}';
 	var bannerHeight		= '{{ BANNER_HEIGHT | escape('js') }}';
@@ -9,6 +9,7 @@
 	var overrideColour		= '{{ OVERRIDE_COLOUR | escape('js') }}';
 	var searchBelow			= '{{ SEARCH_BELOW | escape('js') }}';
 	var siteLogo 			= '{{ SITE_LOGO_IMG_NEW | escape('js') }}';
+	var siteLogoUrl			= '{{ SITE_LOGO_LOGO_URL | escape('js') }}';
 	var siteLogoBanner		= '{{ SITE_LOGO_BANNER | escape('js') }}';
 	var siteLogoCentre		= '{{ SITE_LOGO_CENTRE | escape('js') }}';
 	var siteLogoRemove		= '{{ SITE_LOGO_REMOVE | escape('js') }}';
@@ -16,7 +17,8 @@
 	var siteNameSupress		= '{{ SITENAME_SUPRESS | escape('js') }}';
 	var useBackground		= '{{ USE_BACKGROUND | escape('js') }}';
 	var useBanner			= '{{ USE_BANNER | escape('js') }}';
+	var useLogoUrl			= '{{ USE_LOGO_URL | escape('js') }}';
 	var useOverrideColour	= '{{ USE_OVERRIDE_COLOUR | escape('js') }}';
 </script>
 
-{% INCLUDEJS '@david63_sitelogo/css_switch_fn.js' %}
+{% INCLUDEJS '@david63_sitelogo/site_logo_fn.js' %}

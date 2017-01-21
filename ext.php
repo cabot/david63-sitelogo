@@ -13,7 +13,7 @@ use \phpbb\extension\base;
 
 class ext extends base
 {
-	const SITE_LOGO_VERSION	= '2.1.0 RC2';
+	const SITE_LOGO_VERSION	= '2.1.0 RC3';
 
 	const LOGO_POSITION_LEFT	= 0;
 	const LOGO_POSITION_CENTER	= 1;

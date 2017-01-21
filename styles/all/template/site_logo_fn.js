@@ -19,6 +19,12 @@
 		$('#sl-new-desc p').css('color', pColour);
 		$('.sl-headerbar').css('background-image', bgImage);
 
+		// Use a different link for the logo than for breadcrumbs
+		if (useLogoUrl  == true )
+		{
+			$('#logo').attr('href', siteLogoUrl);
+		}
+
 		// Remove logo if using mobile device
 		if ($(window).width() <= 700)
 		{
@@ -32,9 +38,11 @@
 				'background-repeat': 'no-repeat',
 				'background-position': '0% 0%',
 				'background-size': '100%',
-				'height': logoHeight,
-				'width': logoWidth, '-webkit-border-radius': logoCorners, '-moz-border-radius': logoCorners,
-				'border-radius': logoCorners
+				'height': logoHeight + 'px',
+				'width': logoWidth + 'px',
+				'-webkit-border-radius': logoCorners,
+				'-moz-border-radius': logoCorners,
+				'border-radius': logoCorners,
 			});
 		}
 
@@ -136,6 +144,8 @@
 			$('.headerbar').css({
 				'background': 'url("' + siteLogoBanner + '") ' + 'no-repeat',
 				'height': bannerHeight + 'px',
+				'-webkit-border-radius': borderRadius + 'px',
+				'-moz-border-radius': borderRadius + 'px',
 				'border-radius': borderRadius + 'px'
 			});
     	}

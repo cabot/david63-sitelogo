@@ -2,7 +2,7 @@
 	"name": "david63/sitelogo",
 	"type": "phpbb-extension",
 	"description": "Replace the standard phpBB logo with own custom logo",
-	"version": "2.1.0-rc2",
+	"version": "2.1.0-rc3",
 	"time": "2017-01-05",
 	"license": "GPL-2.0",
 	"authors": [

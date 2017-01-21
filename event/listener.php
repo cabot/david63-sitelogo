@@ -50,7 +50,7 @@ class listener implements EventSubscriberInterface
 	*
 	* @access public
 	*/
-	public function __construct(config $config, db_text $config_text, template $template, user $user,  $root_path)
+	public function __construct(config $config, db_text $config_text, template $template, user $user, $root_path)
 	{
 		$this->config		= $config;
 		$this->config_text 	= $config_text;
@@ -89,13 +89,11 @@ class listener implements EventSubscriberInterface
 		// No point processing this if it is not required
 		if ($this->config['site_logo_image'] && !$this->config['site_logo_remove'])
 		{
-			$logo_path			= (strpos(strtolower($this->config['site_logo_image']), 'http') !== false) ? $this->config['site_logo_image'] : append_sid($this->root_path . $this->config['site_logo_image'], false, false);
-
+			$logo_path		= $this->set_site_logo_url($this->config['site_logo_image']);
 			$logo_corners 	= ($this->config['site_logo_left']) ? $this->config['site_logo_pixels'] . 'px 0px 0px ' . $this->config['site_logo_pixels'] . 'px' : $logo_corners;
- 			$logo_corners 		= ($this->config['site_logo_right']) ? '0px ' . $this->config['site_logo_pixels'] . 'px ' . $this->config['site_logo_pixels'] . 'px 0px' : $logo_corners;
-			$logo_corners 		= ($this->config['site_logo_left'] && $this->config['site_logo_right']) ? $this->config['site_logo_pixels'] . 'px ' . $this->config['site_logo_pixels'] . 'px ' . $this->config['site_logo_pixels'] . 'px ' . $this->config['site_logo_pixels'] . 'px' : $logo_corners;
-
-			$site_logo_img		= '<img src=' . $logo_path . ' style="max-width: 100%; height:auto; height:' . $this->config['site_logo_height'] . 'px; width:' . $this->config['site_logo_width'] . 'px; -webkit-border-radius: ' . $logo_corners . '; -moz-border-radius: ' . $logo_corners . '; border-radius: ' . $logo_corners . ';">';
+ 			$logo_corners 	= ($this->config['site_logo_right']) ? '0px ' . $this->config['site_logo_pixels'] . 'px ' . $this->config['site_logo_pixels'] . 'px 0px' : $logo_corners;
+			$logo_corners 	= ($this->config['site_logo_left'] && $this->config['site_logo_right']) ? $this->config['site_logo_pixels'] . 'px ' . $this->config['site_logo_pixels'] . 'px ' . $this->config['site_logo_pixels'] . 'px ' . $this->config['site_logo_pixels'] . 'px' : $logo_corners;
+			$site_logo_img	= '<img src=' . $logo_path . ' style="max-width: 100%; height:auto; height:' . $this->config['site_logo_height'] . 'px; width:' . $this->config['site_logo_width'] . 'px; -webkit-border-radius: ' . $logo_corners . '; -moz-border-radius: ' . $logo_corners . '; border-radius: ' . $logo_corners . ';">';
 			$site_logo_img_new = 'url("'. $logo_path . '")';
 		}
 
@@ -104,10 +102,6 @@ class listener implements EventSubscriberInterface
 			$extended_site_description_data	= $this->config_text->get_array(array('site_logo_extended_site_description'));
 			$this->config['site_desc']		= $extended_site_description_data['site_logo_extended_site_description'];
 		}
-
-		$site_logo_banner = (strpos(strtolower($this->config['site_logo_banner_url']), 'http') !== false) ? $this->config['site_logo_banner_url'] : append_sid($this->root_path . $this->config['site_logo_banner_url'], false, false);
-
-		$site_logo_background = (strpos(strtolower($this->config['site_logo_background_image']), 'http') !== false) ? $this->config['site_logo_background_image'] : append_sid($this->root_path . $this->config['site_logo_background_image'], false, false);
 
 		$this->template->assign_vars(array(
 			'BANNER_HEIGHT'			=> $this->config['site_logo_banner_height'],
@@ -122,12 +116,13 @@ class listener implements EventSubscriberInterface
 			'SEARCH_BELOW'			=> ((!$this->config['site_search_remove'] && $this->config['site_logo_site_name_below']) || $this->config['site_logo_move_search']) ? true : false,
 
 			'SITE_DESCRIPTION'		=> $this->config['site_desc'],
-			'SITE_LOGO_BACKGROUND'	=> $site_logo_background,
-			'SITE_LOGO_BANNER'		=> $site_logo_banner,
+			'SITE_LOGO_BACKGROUND'	=> $this->set_site_logo_url($this->config['site_logo_background_image']),
+			'SITE_LOGO_BANNER'		=> $this->set_site_logo_url($this->config['site_logo_banner_url']),
 			'SITE_LOGO_CENTRE'		=> ($this->config['site_logo_position'] == ext::LOGO_POSITION_CENTER) ? true : false,
 			'SITE_LOGO_DESCRITION'	=> $this->config['site_desc'],
 			'SITE_LOGO_IMG'			=> $site_logo_img,
 			'SITE_LOGO_IMG_NEW'		=> $site_logo_img_new,
+			'SITE_LOGO_LOGO_URL'	=> $this->set_site_logo_url($this->config['site_logo_logo_url']),
 			'SITE_LOGO_REMOVE'		=> $this->config['site_logo_remove'],
 			'SITE_LOGO_RIGHT'		=> ($this->config['site_logo_position'] == ext::LOGO_POSITION_RIGHT) ? true : false,
 			'SITE_LOGO_SITENAME'	=> $this->config['sitename'],
@@ -135,9 +130,21 @@ class listener implements EventSubscriberInterface
 			'SITENAME_SUPRESS'		=> ($this->config['site_name_supress'] || $this->config['site_logo_site_name_below']) ? true : false,
 			'S_IN_SEARCH'			=> ($this->config['site_search_remove'] || $this->config['site_logo_site_name_below'] || $this->config['site_logo_move_search']) ? true : false,
 
-			'USE_BACKGROUND'		=> ($this->config['site_logo_use_background'] && $this->config['site_logo_use_background']) ? true : false,
+			'USE_BACKGROUND'		=> ($this->config['site_logo_use_background'] && $this->config['site_logo_background_image']) ? true : false,
 			'USE_BANNER'			=> ($this->config['site_logo_use_banner'] && $this->config['site_logo_banner_url']) ? true : false,
+			'USE_LOGO_URL'			=> ($this->config['site_logo_logo_url']) ? true : false,
 			'USE_OVERRIDE_COLOUR'	=> $this->config['site_logo_use_override_colour'],
 		));
+	}
+
+	/**
+	* Set the remote or local url
+	*
+	* @return url
+	* @access protected
+	*/
+	protected function set_site_logo_url($url)
+	{
+		return (strpos(strtolower($url), 'http') !== false) ? $url : append_sid($this->root_path . $url, false, false);
 	}
 }

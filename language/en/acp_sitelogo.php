@@ -61,15 +61,15 @@ $lang = array_merge($lang, array(
 
 	'SITE_BACKGROUND'					=> 'Site background',
 	'SITE_BACKGROUND_IMAGE'				=> 'Path to the site background',
-	'SITE_BACKGROUND_IMAGE_EXPLAIN'		=> 'If you want to use a remote image as the background then enter the full url of the image otherwise, just enter the location of the image on the site.<br /><em>e.g. images/my_background.jpg<br />http://a_site.org/new_background.png</em>',
+	'SITE_BACKGROUND_IMAGE_EXPLAIN'		=> 'If you want to use a remote image as the background then enter the full url of the image otherwise, just enter the location of the image.<br /><em>e.g. images/my_background.jpg - or<br />http://a_site.org/new_background.png</em>',
 
 	'SITE_LOGO_EXPLAIN'					=> 'Here you can set the options for a custom site logo to replace the default logo, add a custom banner, use an extended board description or add a background to your board.',
 	'SITE_LOGO_BANNER_IMAGE'			=> 'Path to the custom banner',
-	'SITE_LOGO_BANNER_IMAGE_EXPLAIN'	=> 'If you want to use a remote image as the banner then enter the full url of the image otherwise, just enter the location of the image on the site.<br /><em>e.g. images/my_banner.jpg<br />http://a_site.org/new_banner.png</em>',
+	'SITE_LOGO_BANNER_IMAGE_EXPLAIN'	=> 'If you want to use a remote image as the banner then enter the full url of the image otherwise, just enter the location of the image.<br /><em>e.g. images/my_banner.jpg - or<br />http://a_site.org/new_banner.png</em>',
 	'SITE_LOGO_HEIGHT'					=> 'Logo height',
 	'SITE_LOGO_HEIGHT_EXPLAIN'			=> 'Leaving this blank will use the default height.<br /><em>The default logo height is 52px.</em>',
 	'SITE_LOGO_IMAGE'					=> 'Path to the custom site logo.',
-	'SITE_LOGO_IMAGE_EXPLAIN'			=> 'Leaving this blank will use the default logo.<br />If you want to use a remote image as the logo then enter the full url of the image otherwise, just enter the location of the image on the site.<br /><em>e.g. images/my_logo.jpg<br />http://a_site.org/new_logo.png</em>',
+	'SITE_LOGO_IMAGE_EXPLAIN'			=> 'Leaving this blank will use the default logo.<br />If you want to use a remote image as the logo then enter the full url of the image otherwise, just enter the location of the image.<br /><em>e.g. images/my_logo.jpg - or<br />http://a_site.org/new_logo.png</em>',
 	'SITE_LOGO_LEFT'					=> 'Left corners',
 	'SITE_LOGO_LEFT_EXPLAIN'			=> 'Round the left side corners to match the banner.',
 	'SITE_LOGO_OPTIONS'					=> 'Logo options',
@@ -81,6 +81,8 @@ $lang = array_merge($lang, array(
 	'SITE_LOGO_RIGHT'					=> 'Right corners',
 	'SITE_LOGO_RIGHT_EXPLAIN'			=> 'Round the right side corners to match the banner.',
 	'SITE_LOGO_SIZE_EXPLAIN'			=> '<strong>Note: These settings will set the size of the area for the site logo image. The actual image may need to be resized in order to fit this space, otherwise it may not display correctly.</strong>',
+	'SITE_LOGO_URL'						=> 'Link for site logo',
+	'SITE_LOGO_URL_EXPLAIN'				=> 'The link that the user will go to when they click on the Site Logo, just enter the location of the link.<br /><em>e.g. my_site/my_page.php - or<br />http://a_site.org/my_page.html</em><br /><strong>Leaving this blank will use the board default link.</strong>',
 	'SITE_LOGO_WIDTH'					=> 'Logo width',
 	'SITE_LOGO_WIDTH_EXPLAIN'			=> 'Leaving this blank will use the default width.<br /><em>The default logo width is 149px.</em>',
 
