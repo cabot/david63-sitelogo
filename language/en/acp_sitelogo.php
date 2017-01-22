@@ -3,7 +3,7 @@
 *
 * @package Site Logo Extension
 * @copyright (c) 2014 david63
-* @license http://opensource.org/licenses/gpl-license.php GNU Public License
+* * @license GNU General Public License, version 2 (GPL-2.0)
 *
 */
 
@@ -78,6 +78,8 @@ $lang = array_merge($lang, array(
 	'SITE_LOGO_POSITION'				=> 'Site logo position',
 	'SITE_LOGO_REMOVE'					=> 'Remove site logo',
 	'SITE_LOGO_REMOVE_EXPLAIN'			=> 'Setting this option will prevent the display the site logo.',
+	'SITE_LOGO_RESPONSIVE'				=> 'Make responsive',
+	'SITE_LOGO_RESPONSIVE_EXPLAIN'		=> 'Make the site logo options responsive on mobile devices and tablets.',
 	'SITE_LOGO_RIGHT'					=> 'Right corners',
 	'SITE_LOGO_RIGHT_EXPLAIN'			=> 'Round the right side corners to match the banner.',
 	'SITE_LOGO_SIZE_EXPLAIN'			=> '<strong>Note: These settings will set the size of the area for the site logo image. The actual image may need to be resized in order to fit this space, otherwise it may not display correctly.</strong>',

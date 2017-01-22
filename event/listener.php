@@ -3,7 +3,7 @@
 *
 * @package Site Logo Extension
 * @copyright (c) 2014 david63
-* @license http://opensource.org/licenses/gpl-2.0.php GNU General Public License v2
+* @license GNU General Public License, version 2 (GPL-2.0)
 *
 */
 
@@ -119,11 +119,12 @@ class listener implements EventSubscriberInterface
 			'SITE_LOGO_BACKGROUND'	=> $this->set_site_logo_url($this->config['site_logo_background_image']),
 			'SITE_LOGO_BANNER'		=> $this->set_site_logo_url($this->config['site_logo_banner_url']),
 			'SITE_LOGO_CENTRE'		=> ($this->config['site_logo_position'] == ext::LOGO_POSITION_CENTER) ? true : false,
-			'SITE_LOGO_DESCRITION'	=> $this->config['site_desc'],
+			'SITE_LOGO_DESCRIPTION'	=> $this->config['site_desc'],
 			'SITE_LOGO_IMG'			=> $site_logo_img,
 			'SITE_LOGO_IMG_NEW'		=> $site_logo_img_new,
 			'SITE_LOGO_LOGO_URL'	=> $this->set_site_logo_url($this->config['site_logo_logo_url']),
 			'SITE_LOGO_REMOVE'		=> $this->config['site_logo_remove'],
+			'SITE_LOGO_RESPONSIVE'	=> $this->config['site_logo_responsive'],
 			'SITE_LOGO_RIGHT'		=> ($this->config['site_logo_position'] == ext::LOGO_POSITION_RIGHT) ? true : false,
 			'SITE_LOGO_SITENAME'	=> $this->config['sitename'],
 			'SITE_NAME_BELOW'		=> $this->config['site_logo_site_name_below'],

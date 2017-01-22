@@ -3,7 +3,7 @@
 *
 * @package Site Logo Extension
 * @copyright (c) 2014 david63
-* @license http://opensource.org/licenses/gpl-2.0.php GNU General Public License v2
+* @license GNU General Public License, version 2 (GPL-2.0)
 *
 */
 
@@ -145,6 +145,7 @@ class admin_controller implements admin_interface
 			'SITE_LOGO_LEFT'			=> isset($this->config['site_logo_left']) ? $this->config['site_logo_left'] : '',
 			'SITE_LOGO_PIXELS'			=> isset($this->config['site_logo_pixels']) ? $this->config['site_logo_pixels'] : '',
 			'SITE_LOGO_REMOVE'			=> isset($this->config['site_logo_remove']) ? $this->config['site_logo_remove'] : '',
+			'SITE_LOGO_RESPONSIVE'		=> isset($this->config['site_logo_responsive']) ? $this->config['site_logo_responsive'] : '',
 			'SITE_LOGO_RIGHT'			=> isset($this->config['site_logo_right']) ? $this->config['site_logo_right'] : '',
 			'SITE_LOGO_URL'				=> isset($this->config['site_logo_logo_url']) ? $this->config['site_logo_logo_url'] : '',
 			'SITE_LOGO_WIDTH'			=> isset($this->config['site_logo_width']) ? $this->config['site_logo_width'] : '',
@@ -181,6 +182,7 @@ class admin_controller implements admin_interface
 		$this->config->set('site_logo_pixels', $this->request->variable('site_logo_pixels', 0));
 		$this->config->set('site_logo_position', $this->request->variable('site_logo_position', 0));
 		$this->config->set('site_logo_remove', $this->request->variable('site_logo_remove', 0));
+		$this->config->set('site_logo_responsive', $this->request->variable('site_logo_responsive', 1));
 		$this->config->set('site_logo_right', $this->request->variable('site_logo_right', 0));
 		$this->config->set('site_logo_site_name_below', $this->request->variable('site_logo_site_name_below', 0));
 		$this->config->set('site_logo_use_extended_desc', $this->request->variable('site_logo_use_extended_desc', 0));

@@ -3,7 +3,7 @@
 *
 * @package Site Logo Extension
 * @copyright (c) 2014 david63
-* @license http://opensource.org/licenses/gpl-2.0.php GNU General Public License v2
+* @license GNU General Public License, version 2 (GPL-2.0)
 *
 */
 
@@ -28,6 +28,7 @@ class version_2_1_0 extends migration
 			array('config.add', array('site_logo_logo_url', '')),
 			array('config.add', array('site_logo_move_search', 0)),
 			array('config.add', array('site_logo_override_colour', '#000000')),
+			array('config.add', array('site_logo_responsive', 1)),
 			array('config.add', array('site_logo_site_name_below', 0)),
 			array('config.add', array('site_logo_use_banner', 0)),
 			array('config.add', array('site_logo_use_extended_desc', 0)),

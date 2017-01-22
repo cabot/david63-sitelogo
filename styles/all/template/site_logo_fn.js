@@ -25,8 +25,14 @@
 			$('#logo').attr('href', siteLogoUrl);
 		}
 
+		// Remove site logo
+		if (siteLogoRemove  == true )
+		{
+			$('span').removeClass('site_logo');
+		}
+
 		// Remove logo if using mobile device
-		if ($(window).width() <= 700)
+		if ($(window).width() <= 700 && responsive == true)
 		{
 			$('span').removeClass('site_logo');
 			$('#site-description p').css('display', 'none');
@@ -46,16 +52,14 @@
 			});
 		}
 
-		// Remove site logo if option set or if window is less that 700px (mobile devices)
-		if (siteLogoRemove  == true )
-		{
-			$('span').removeClass('site_logo');
-		}
-
 		// Remove the site name and description
 		if (siteNameSupress  == true)
 		{
-			$('#site-description h1').css('display', 'none');
+			// Don't remove the site name on a mobile device
+			if ($(window).width() > 700 || responsive == false)
+			{
+				$('#site-description h1').css('display', 'none');
+			}
 			$('#site-description p').css('display', 'none');
     	}
 
