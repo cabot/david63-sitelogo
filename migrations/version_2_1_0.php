@@ -25,6 +25,8 @@ class version_2_1_0 extends migration
 			array('config.add', array('site_logo_banner_height', 100)),
 			array('config.add', array('site_logo_banner_radius', 10)),
 			array('config.add', array('site_logo_banner_url', '')),
+			array('config.add', array('site_logo_header', 0)),
+			array('config.add', array('site_logo_header_colour', '#12A3EB')),
 			array('config.add', array('site_logo_logo_url', '')),
 			array('config.add', array('site_logo_move_search', 0)),
 			array('config.add', array('site_logo_override_colour', '#000000')),

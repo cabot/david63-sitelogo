@@ -48,12 +48,16 @@ $lang = array_merge($lang, array(
 	'EXTENDED_SITE_DESCRIPTION'			=> 'Extended site description',
 	'EXTENDED_SITE_DESCRIPTION_EXPLAIN'	=> 'This will allow you to create a site description that is greater than the 255 character limit of the standard site description and will <strong>replace</strong> the standard site description.<br /><strong>Note:</strong> If the data here is overly long there may be some strange “side effects” - most of these can be overcome by adjusting some of the other options.',
 
+	'HEADER_COLOUR'						=> 'Header colour',
+	'HEADER_COLOUR_EXPLAIN'				=> 'Select a colour for the header background.<br />Setting this option will apply, where possible, the same gradient offsets to the background colour that are used in “prosilver”.<br /><em>Default = #12A3EB</em>',
+	'HEADER_OPTIONS'					=> 'Header options',
+
 	'LOGO_CENTRE'						=> 'Centre',
 	'LOGO_LEFT'							=> 'Left',
 	'LOGO_RIGHT'						=> 'Right',
 
 	'OVERRIDE_COLOUR'					=> 'Override colour',
-	'OVERRIDE_COLOUR_EXPLAIN'			=> 'Set a colour for the Site Name and Site Description that will replace the colour defined in the style.',
+	'OVERRIDE_COLOUR_EXPLAIN'			=> 'Select a colour for the Site Name and Site Description that will replace the colour defined in the style.',
 
 	'PIXELS'							=> 'px',
 
@@ -104,6 +108,8 @@ $lang = array_merge($lang, array(
 	'USE_BANNER_EXPLAIN'				=> 'Add a custom banner to the top of the board.',
 	'USE_EXTENED_SITE_DESC'				=> 'Use extended site description',
 	'USE_EXTENED_SITE_DESC_EXPLAIN'		=> 'Replace the standard site description with the extended site description.',
+	'USE_HEADER_COLOURS'				=> 'Custom header colours',
+	'USE_HEADER_COLOURS_EXPLAIN'		=> 'Use custom colours for the board header bar.',
 	'USE_OVERRIDE_COLOUR'				=> 'Override default colour',
 	'USE_OVERRIDE_COLOUR_EXPLAIN'		=> 'Allow the override colour to be used for the Site Name and Site Description.',
 	'USE_SITE_BACKGROUND'				=> 'Use a site background',

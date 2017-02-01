@@ -107,6 +107,10 @@ class listener implements EventSubscriberInterface
 			'BANNER_HEIGHT'			=> $this->config['site_logo_banner_height'],
 			'BORDER_RADIUS'			=> $this->config['site_logo_banner_radius'],
 
+			'HEADER_COLOUR'			=> $this->config['site_logo_header_colour'],
+			'HEADER_COLOUR_1'		=> $this->get_hex_colour($this->config['site_logo_header_colour'], 1),
+			'HEADER_COLOUR_2'		=> $this->get_hex_colour($this->config['site_logo_header_colour'], 2),
+
 			'LOGO_CORNERS'			=> $logo_corners,
 			'LOGO_HEIGHT'			=> $this->config['site_logo_height'],
 			'LOGO_WIDTH'			=> $this->config['site_logo_width'],
@@ -133,9 +137,33 @@ class listener implements EventSubscriberInterface
 
 			'USE_BACKGROUND'		=> ($this->config['site_logo_use_background'] && $this->config['site_logo_background_image']) ? true : false,
 			'USE_BANNER'			=> ($this->config['site_logo_use_banner'] && $this->config['site_logo_banner_url']) ? true : false,
+			'USE_HEADER_COLOUR'		=> ($this->config['site_logo_header']) ? true : false,
 			'USE_LOGO_URL'			=> ($this->config['site_logo_logo_url']) ? true : false,
 			'USE_OVERRIDE_COLOUR'	=> $this->config['site_logo_use_override_colour'],
 		));
+	}
+
+	/**
+	* Get the hex values for the gradient colours
+	* This uses the same offsets as phpBB's prosilver where possible
+	*
+	* @return hex colour
+	* @access protected
+	*/
+	protected function get_hex_colour($base_colour, $offset)
+	{
+		// If first character of hex colour is non numeric then gradient will not work so make all colours the same
+		if ((int) ord(substr($base_colour, 1, 1)) > 57 ) // a.k.a > 9
+		{
+			$offset_colour = $base_colour;
+		}
+		else
+		{
+			$base_colour 	= hexdec(ltrim($base_colour, '#'));
+			$offset_colour	= '#' . dechex(($offset == 1) ? $base_colour + 5778196 : $base_colour - 1191226);
+		}
+
+		return $offset_colour;
 	}
 
 	/**

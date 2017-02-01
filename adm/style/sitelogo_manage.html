@@ -70,6 +70,21 @@
 	</fieldset>
 
 	<fieldset>
+		<legend>{{ lang('HEADER_OPTIONS') }}</legend>
+
+		<dl>
+			<dt><label for="site_logo_header">{{ lang('USE_HEADER_COLOURS') }}{{ lang('COLON') }}</label><br /><span>{{ lang('USE_HEADER_COLOURS_EXPLAIN') }}</span></dt>
+			<dd><label><input type="radio" class="radio" name="site_logo_header" value="1" id="site_logo_header" {% if USE_HEADER_COLOURS %} checked="checked"{% endif %}/> {{ lang('YES') }}</label>
+				<label><input type="radio" class="radio" name="site_logo_header" value="0" {% if not USE_HEADER_COLOURS %} checked="checked"{% endif %} /> {{ lang('NO') }}</label></dd>
+		</dl>
+
+		<dl>
+			<dt><label for="site_logo_header_colour">{{ lang('HEADER_COLOUR') }}{{ lang('COLON') }}</label><br /><span>{{ lang('HEADER_COLOUR_EXPLAIN') }}</span></dt>
+			<dd><input class="jscolor {hash:true, uppercase:false}" name="site_logo_header_colour" type="text" id="site_logo_header_colour" value="{{ HEADER_COLOUR }}" size="6" maxlength="6" />&nbsp;{{ lang('CLICK_TO_SELECT') }}</dd>
+		</dl>
+	</fieldset>
+
+	<fieldset>
 		<legend>{{ lang('SEARCH_OPTIONS') }}</legend>
 
 		<dl>

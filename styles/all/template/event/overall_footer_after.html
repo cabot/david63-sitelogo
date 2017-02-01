@@ -1,8 +1,12 @@
+
 <!-- Send the variables to the js file -->
 <script>
 	var backgroundImage		= '{{ SITE_LOGO_BACKGROUND | escape('js') }}';
 	var bannerHeight		= '{{ BANNER_HEIGHT | escape('js') }}';
 	var borderRadius		= '{{ BORDER_RADIUS | escape('js') }}';
+	var headerColour		= '{{ HEADER_COLOUR | escape('js') }}';
+	var headerColour1		= '{{ HEADER_COLOUR_1 | escape('js') }}';
+	var headerColour2		= '{{ HEADER_COLOUR_2 | escape('js') }}';
 	var logoCorners 		= '{{ LOGO_CORNERS | escape('js') }}';
 	var logoHeight 			= '{{ LOGO_HEIGHT | escape('js') }}';
 	var logoWidth 			= '{{ LOGO_WIDTH | escape('js') }}';
@@ -18,6 +22,7 @@
 	var siteNameSupress		= '{{ SITENAME_SUPRESS | escape('js') }}';
 	var useBackground		= '{{ USE_BACKGROUND | escape('js') }}';
 	var useBanner			= '{{ USE_BANNER | escape('js') }}';
+	var useHeaderColour		= '{{ USE_HEADER_COLOUR | escape('js') }}';
 	var useLogoUrl			= '{{ USE_LOGO_URL | escape('js') }}';
 	var useOverrideColour	= '{{ USE_OVERRIDE_COLOUR | escape('js') }}';
 </script>

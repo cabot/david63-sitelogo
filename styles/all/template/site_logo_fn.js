@@ -19,14 +19,24 @@
 		$('#sl-new-desc p').css('color', pColour);
 		$('.sl-headerbar').css('background-image', bgImage);
 
+		if (useHeaderColour == true)
+		{
+			$('.headerbar').css({
+				'background-color': headerColour,
+				'background-image': '-webkit-linear-gradient(top, ' + headerColour1 + ' 0%, ' + headerColour2 + ' 2px, ' + headerColour + ' 92px, ' + headerColour + ' 100%)',
+				'background-image': 'linear-gradient(to bottom, ' + headerColour1 + ' 0%, ' + headerColour2 + ' 2px, ' + headerColour + ' 92px, ' +  headerColour + ' 100%)',
+				'background-repeat': 'repeat-x',
+			});
+		}
+
 		// Use a different link for the logo than for breadcrumbs
-		if (useLogoUrl  == true )
+		if (useLogoUrl == true )
 		{
 			$('#logo').attr('href', siteLogoUrl);
 		}
 
 		// Remove site logo
-		if (siteLogoRemove  == true )
+		if (siteLogoRemove == true )
 		{
 			$('span').removeClass('site_logo');
 		}
