@@ -48,7 +48,7 @@ $lang = array_merge($lang, array(
 	'EXTENDED_SITE_DESCRIPTION'			=> 'Extended site description',
 	'EXTENDED_SITE_DESCRIPTION_EXPLAIN'	=> 'This will allow you to create a site description that is greater than the 255 character limit of the standard site description and will <strong>replace</strong> the standard site description.<br /><strong>Note:</strong> If the data here is overly long there may be some strange “side effects” - most of these can be overcome by adjusting some of the other options.',
 
-	'HEADER_COLOUR'						=> 'Header colour',
+	'HEADER_COLOUR'						=> 'Header bar colour',
 	'HEADER_COLOUR_EXPLAIN'				=> 'Select a colour for the header background.<br />Setting this option will apply, where possible, the same gradient offsets to the background colour that are used in “prosilver”.<br /><em>Default = #12A3EB</em>',
 	'HEADER_OPTIONS'					=> 'Header options',
 
@@ -61,12 +61,13 @@ $lang = array_merge($lang, array(
 
 	'PIXELS'							=> 'px',
 
-	'SEARCH_OPTIONS'					=> 'Search box options',
+	'REMOVE_HEADER_BAR'					=> 'Remove the header bar',
+	'REMOVE_HEADER_BAR_EXPLAIN'			=> 'Setting this option will prevent the display of the header bar.',
 
+	'SEARCH_OPTIONS'					=> 'Search box options',
 	'SITE_BACKGROUND'					=> 'Site background',
 	'SITE_BACKGROUND_IMAGE'				=> 'Path to the site background',
 	'SITE_BACKGROUND_IMAGE_EXPLAIN'		=> 'If you want to use a remote image as the background then enter the full url of the image otherwise, just enter the location of the image.<br /><em>e.g. images/my_background.jpg - or<br />http://a_site.org/new_background.png</em>',
-
 	'SITE_LOGO_EXPLAIN'					=> 'Here you can set the options for a custom site logo to replace the default logo, add a custom banner, use an extended board description or add a background to your board.',
 	'SITE_LOGO_BANNER_IMAGE'			=> 'Path to the custom banner',
 	'SITE_LOGO_BANNER_IMAGE_EXPLAIN'	=> 'If you want to use a remote image as the banner then enter the full url of the image otherwise, just enter the location of the image.<br /><em>e.g. images/my_banner.jpg - or<br />http://a_site.org/new_banner.png</em>',
@@ -91,12 +92,10 @@ $lang = array_merge($lang, array(
 	'SITE_LOGO_URL_EXPLAIN'				=> 'The link that the user will go to when they click on the Site Logo, just enter the location of the link.<br /><em>e.g. my_site/my_page.php - or<br />http://a_site.org/my_page.html</em><br /><strong>Leaving this blank will use the board default link.</strong>',
 	'SITE_LOGO_WIDTH'					=> 'Logo width',
 	'SITE_LOGO_WIDTH_EXPLAIN'			=> 'Leaving this blank will use the default width.<br /><em>The default logo width is 149px.</em>',
-
 	'SITE_NAME_BELOW'					=> 'Site name and description below the logo',
 	'SITE_NAME_BELOW_EXPLAIN'			=> 'Move the Site Name and Site Description below the site logo. This will also move the search box onto the top nav bar. The text will be positioned (left/centre/right) the same as the logo.',
 	'SITE_NAME_SUPRESS'					=> 'Remove text display',
 	'SITE_NAME_SUPRESS_EXPLAIN'			=> 'Setting this option will prevent the Site Name and Site Description from being displayed.',
-
 	'SITE_SEARCH_IN_NAVBAR'				=> 'Move search box to nav bar',
 	'SITE_SEARCH_IN_NAVBAR_EXPLAIN'		=> 'Move the search box onto the top navigation bar.<br />This may be required when using the custom banner option.',
 	'SITE_SEARCH_REMOVE'				=> 'Remove search box',
@@ -108,8 +107,8 @@ $lang = array_merge($lang, array(
 	'USE_BANNER_EXPLAIN'				=> 'Add a custom banner to the top of the board.',
 	'USE_EXTENED_SITE_DESC'				=> 'Use extended site description',
 	'USE_EXTENED_SITE_DESC_EXPLAIN'		=> 'Replace the standard site description with the extended site description.',
-	'USE_HEADER_COLOURS'				=> 'Custom header colours',
-	'USE_HEADER_COLOURS_EXPLAIN'		=> 'Use custom colours for the board header bar.',
+	'USE_HEADER_COLOURS'				=> 'Custom header bar colours',
+	'USE_HEADER_COLOURS_EXPLAIN'		=> 'Use custom colours for the board header bar.<br /><strong>Note: This option will have no affect if <em>Remove Header Bar</em> has been selected.</strong>',
 	'USE_OVERRIDE_COLOUR'				=> 'Override default colour',
 	'USE_OVERRIDE_COLOUR_EXPLAIN'		=> 'Allow the override colour to be used for the Site Name and Site Description.',
 	'USE_SITE_BACKGROUND'				=> 'Use a site background',

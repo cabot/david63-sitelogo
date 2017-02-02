@@ -140,6 +140,8 @@ class admin_controller implements admin_interface
 
 			'OVERRIDE_COLOUR'			=> isset($this->config['site_logo_override_colour']) ? $this->config['site_logo_override_colour'] : '',
 
+			'REMOVE_HEADER_BAR'			=> isset($this->config['site_logo_remove_header']) ? $this->config['site_logo_remove_header'] : '',
+
 			'SEARCH_TO_NAVBAR'			=> isset($this->config['site_logo_move_search']) ? $this->config['site_logo_move_search'] : '',
 			'SITE_BACKGROUND_IMAGE'		=> isset($this->config['site_logo_background_image']) ? $this->config['site_logo_background_image'] : '',
 			'SITE_LOGO_HEIGHT'			=> isset($this->config['site_logo_height']) ? $this->config['site_logo_height'] : '',
@@ -187,6 +189,7 @@ class admin_controller implements admin_interface
 		$this->config->set('site_logo_pixels', $this->request->variable('site_logo_pixels', 0));
 		$this->config->set('site_logo_position', $this->request->variable('site_logo_position', 0));
 		$this->config->set('site_logo_remove', $this->request->variable('site_logo_remove', 0));
+		$this->config->set('site_logo_remove_header', $this->request->variable('site_logo_remove_header', 0));
 		$this->config->set('site_logo_responsive', $this->request->variable('site_logo_responsive', 1));
 		$this->config->set('site_logo_right', $this->request->variable('site_logo_right', 0));
 		$this->config->set('site_logo_site_name_below', $this->request->variable('site_logo_site_name_below', 0));

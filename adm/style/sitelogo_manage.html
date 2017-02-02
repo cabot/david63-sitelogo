@@ -73,6 +73,12 @@
 		<legend>{{ lang('HEADER_OPTIONS') }}</legend>
 
 		<dl>
+			<dt><label for="site_logo_remove_header">{{ lang('REMOVE_HEADER_BAR') }}{{ lang('COLON') }}</label><br /><span>{{ lang('REMOVE_HEADER_BAR_EXPLAIN') }}</span></dt>
+			<dd><label><input type="radio" class="radio" name="site_logo_remove_header" value="1" id="site_logo_remove_header" {% if REMOVE_HEADER_BAR %} checked="checked"{% endif %}/> {{ lang('YES') }}</label>
+				<label><input type="radio" class="radio" name="site_logo_remove_header" value="0" {% if not REMOVE_HEADER_BAR %} checked="checked"{% endif %} /> {{ lang('NO') }}</label></dd>
+		</dl>
+
+		<dl>
 			<dt><label for="site_logo_header">{{ lang('USE_HEADER_COLOURS') }}{{ lang('COLON') }}</label><br /><span>{{ lang('USE_HEADER_COLOURS_EXPLAIN') }}</span></dt>
 			<dd><label><input type="radio" class="radio" name="site_logo_header" value="1" id="site_logo_header" {% if USE_HEADER_COLOURS %} checked="checked"{% endif %}/> {{ lang('YES') }}</label>
 				<label><input type="radio" class="radio" name="site_logo_header" value="0" {% if not USE_HEADER_COLOURS %} checked="checked"{% endif %} /> {{ lang('NO') }}</label></dd>

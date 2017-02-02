@@ -30,6 +30,7 @@ class version_2_1_0 extends migration
 			array('config.add', array('site_logo_logo_url', '')),
 			array('config.add', array('site_logo_move_search', 0)),
 			array('config.add', array('site_logo_override_colour', '#000000')),
+			array('config.add', array('site_logo_remove_header', 0)),
 			array('config.add', array('site_logo_responsive', 1)),
 			array('config.add', array('site_logo_site_name_below', 0)),
 			array('config.add', array('site_logo_use_banner', 0)),

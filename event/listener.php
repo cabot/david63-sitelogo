@@ -117,8 +117,9 @@ class listener implements EventSubscriberInterface
 
 			'OVERRIDE_COLOUR'		=> $this->config['site_logo_override_colour'],
 
-			'SEARCH_BELOW'			=> ((!$this->config['site_search_remove'] && $this->config['site_logo_site_name_below']) || $this->config['site_logo_move_search']) ? true : false,
+			'REMOVE_HEADER_BAR'		=> $this->config['site_logo_remove_header'],
 
+			'SEARCH_BELOW'			=> ((!$this->config['site_search_remove'] && $this->config['site_logo_site_name_below']) || $this->config['site_logo_move_search']) ? true : false,
 			'SITE_DESCRIPTION'		=> $this->config['site_desc'],
 			'SITE_LOGO_BACKGROUND'	=> $this->set_site_logo_url($this->config['site_logo_background_image']),
 			'SITE_LOGO_BANNER'		=> $this->set_site_logo_url($this->config['site_logo_banner_url']),

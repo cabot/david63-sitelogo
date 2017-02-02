@@ -19,7 +19,8 @@
 		$('#sl-new-desc p').css('color', pColour);
 		$('.sl-headerbar').css('background-image', bgImage);
 
-		if (useHeaderColour == true)
+		// Set the custom headerbar colours but not if the header bar is removed
+		if (useHeaderColour == true && removeHeaderBar == false)
 		{
 			$('.headerbar').css({
 				'background-color': headerColour,
@@ -28,6 +29,32 @@
 				'background-repeat': 'repeat-x',
 			});
 		}
+
+		// Remove the header bar
+		if (removeHeaderBar == true )
+		{
+			$('div').removeClass('headerbar');
+		}
+
+		// Use the override text colour to replace the default in the header
+		if (useOverrideColour == true)
+		{
+			$('#site-description h1').css('color', overrideColour);
+			$('#site-description p').css('color', overrideColour);
+			$('#sl-new-desc h1').css('color', overrideColour);
+			$('#sl-new-desc p').css('color', overrideColour);
+    	}
+
+		// Remove the site name and description
+		if (siteNameSupress  == true)
+		{
+			// Don't remove the site name on a mobile device
+			if ($(window).width() > 700 || responsive == false)
+			{
+				$('#site-description h1').css('display', 'none');
+			}
+			$('#site-description p').css('display', 'none');
+    	}
 
 		// Use a different link for the logo than for breadcrumbs
 		if (useLogoUrl == true )
@@ -62,17 +89,6 @@
 				'border-radius': logoCorners,
 			});
 		}
-
-		// Remove the site name and description
-		if (siteNameSupress  == true)
-		{
-			// Don't remove the site name on a mobile device
-			if ($(window).width() > 700 || responsive == false)
-			{
-				$('#site-description h1').css('display', 'none');
-			}
-			$('#site-description p').css('display', 'none');
-    	}
 
 		// Place the site logo (and text) in the centre
 		if (siteLogoCentre == true)
@@ -142,15 +158,6 @@
 				'margin-top': '5px',
 				'box-shadow': 'none'
 			});
-    	}
-
-		// Use the override text colour to replace the default in the header
-		if (useOverrideColour == true)
-		{
-			$('#site-description h1').css('color', overrideColour);
-			$('#site-description p').css('color', overrideColour);
-			$('#sl-new-desc h1').css('color', overrideColour);
-			$('#sl-new-desc p').css('color', overrideColour);
     	}
 
 		// Use the Site Logo banner
