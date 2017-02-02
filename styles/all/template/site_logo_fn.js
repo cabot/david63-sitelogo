@@ -54,6 +54,7 @@
 				'background-repeat': 'no-repeat',
 				'background-position': '0% 0%',
 				'background-size': '100%',
+				'max-width': '100%',
 				'height': logoHeight + 'px',
 				'width': logoWidth + 'px',
 				'-webkit-border-radius': logoCorners,

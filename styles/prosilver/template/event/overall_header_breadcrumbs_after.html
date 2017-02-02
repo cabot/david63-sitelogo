@@ -1,4 +1,10 @@
 {% if SITE_NAME_BELOW or SEARCH_BELOW and S_DISPLAY_SEARCH %}
+	<li class="rightside responsive-search">
+		<a href="{U_SEARCH}" title="{L_SEARCH_ADV_EXPLAIN}" role="menuitem">
+			<i class="icon fa-search fa-fw" aria-hidden="true"></i><span class="sr-only">{L_SEARCH}</span>
+		</a>
+	</li>
+
 	<div id="search-box" class="search-box search-header" role="search">
 		<form action="{{ U_SEARCH }}" method="get" id="search">
 			<fieldset>
