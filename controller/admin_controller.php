@@ -162,6 +162,7 @@ class admin_controller implements admin_interface
 			'USE_HEADER_COLOURS'		=> isset($this->config['site_logo_header']) ? $this->config['site_logo_header'] : '',
 			'USE_OVERRIDE_COLOUR'		=> isset($this->config['site_logo_use_override_colour']) ? $this->config['site_logo_use_override_colour'] : '',
 			'USE_SITE_BACKGROUND'		=> isset($this->config['site_logo_use_background']) ? $this->config['site_logo_use_background'] : '',
+			'USE_SOLID_HEADER_COLOURS'	=> isset($this->config['site_logo_header_solid']) ? $this->config['site_logo_header_solid'] : '',
 			'U_ACTION'					=> $this->u_action,
 		));
 	}
@@ -180,6 +181,7 @@ class admin_controller implements admin_interface
 		$this->config->set('site_logo_banner_url', $this->request->variable('site_logo_banner_url', '', true));
 		$this->config->set('site_logo_header', $this->request->variable('site_logo_header', 0));
 		$this->config->set('site_logo_header_colour', $this->request->variable('site_logo_header_colour', '#12A3EB'));
+		$this->config->set('site_logo_header_solid', $this->request->variable('site_logo_header_solid', 0));
 		$this->config->set('site_logo_height', $this->request->variable('site_logo_height', ''));
 		$this->config->set('site_logo_image', $this->request->variable('site_logo_image', '', true));
 		$this->config->set('site_logo_left', $this->request->variable('site_logo_left', 0));

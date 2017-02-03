@@ -154,7 +154,7 @@ class listener implements EventSubscriberInterface
 	protected function get_hex_colour($base_colour, $offset)
 	{
 		// If first character of hex colour is non numeric then gradient will not work so make all colours the same
-		if ((int) ord(substr($base_colour, 1, 1)) > 57 ) // a.k.a > 9
+		if ($this->config['site_logo_header_solid'] || (int) ord(substr($base_colour, 1, 1)) > 57 ) // a.k.a > 9
 		{
 			$offset_colour = $base_colour;
 		}
